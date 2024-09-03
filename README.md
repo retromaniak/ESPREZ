@@ -8,3 +8,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Oryginalne urządzenie<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - Original device
+
+|  |  |
+|---|---|
+| Kontynuując jednak. Przejdźmy do czegoś co bardziej obchodzi tu obecnych niż historia, czyli założenia. Powiedzmy sobie jasno. Oryginalne akcesorium jest drogie. Sprawne urządzenie to koszt ok. 150-200 zł (40-50$) Moim założeniem podczas tworzenia projektu było zbicie tej kwoty do maksymalnie 40 zł (ok. 10$). Należy też wspomnieć że w 2006 roku powstał już projekt odtwarzający urządzenie i został zakończony, a samo urządzenie w 2 wersjach było sprzedawane. Osoby zaintersowane zapraszam do zapoznania się z projektem <a href="https://tim.cexx.org/projects/vibe/">The Drmn' Trance Vibe</a> Na swoje czasy był to bardzo dobry projekt i sami korzystaliśmy z programu testowego. Autor zawarł też masę informacji na temat parametrów zgłoszeniowych urządzenia dzięki czemu nie musieliśmy zdobywać informacji z oryginalnego urządzenia. Jednak projekt jest już bardzo archaiczny program dla mikrokontrolera pisany był w asemblerze, oprogramowanie testowe korzsysta z przestarzałych sterowików które trudno zmusić jest do działania na współczesnych systemach operacyjnych |  |
