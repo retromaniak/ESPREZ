@@ -18,3 +18,7 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Program testowy uruchomiony na HP 2133 Mini<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - Test program running on an HP 2133 Mini
+
+| Sprzęt | Hardware |
+|---|---|
+| Urządzenie bazuje na mikrokontrolerze ESP32-S2 ponieważ dostępny jest na chińskich portalach aukcyjnych za ok. 2-3$. Dlaczego do projektu w którym wystarczyłaby moc obliczeniowa ATTiny wykorzystuje tak "Potężny" mikrokontroler? Odpowiedź jest prosta. Ponieważ urządzeniu należy podmienić PID i VID. Czym one są opisane zostanie w cześci omawiającej program. Co ważne to fakt że na podmianę tych wartości pozwalają tylko mikrokontrolery ESP32 serii S. Jako że DevKit S2 jest najtańszy, to go postanowiłem wybrać jako serce projektu. |  |
