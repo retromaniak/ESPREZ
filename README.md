@@ -1,2 +1,6 @@
 # ESPREZ
-REZ Trance Vibrator Recreation based on ESP32 S-Series
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Rekreacja REZ Trance Vibrator oparta o ESP32 S-Series<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - REZ Trance Vibrator Recreation based on ESP32 S-Series
+| <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="50"/> | <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="50"/>|
+|---|---|
+| Playstation 2 najlepiej sprzedająca się konsola w historii z tysiącami gier. Wiele z tytułów wydanych na tę konsolę oferowało obsługę akcesoriów lub wymagało ich posiadania do gry (mikrofony singstar, kamera Eye-Toy czy Buzzery do gry Buzz) Były też akcesoria bardziej nietypowe jak chociażby kontroler od Gametrak do gry w Golfa, kontroler w kształcie piły do Resident Evil 4 czy w kształcie katany do Onimushy 3. O wielu akcesoriach nie wiedzieć czemu słuch zaginął. Pośród tej różnorodności pomysłów wyróżnia się jednak jeden pomysł. Wibrator. Na PS2 poraz pierwszy w historii (prawdopodobnie) gra dostała jako akcesorium sex zabawkę.  |  |
