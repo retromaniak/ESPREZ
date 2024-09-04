@@ -38,3 +38,8 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Schemat połączeniowy prototypu<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - Wiring diagram of the prototype
+
+| Oprogramowanie | Software |
+|---|---|
+| Część dotyczącą oprogramowania opisze <a href="https://github.com/kamiladas">Kadas</a>. Przyznać muszę że niestety ale część ta mnie przerosła ze względu na specyficzne rozwiązania konieczne do zastosowania w kodzie dlatego ja się zamykam i przekazuje głos współtwórcy. | The software part will be described by <a href="https://github.com/kamiladas">Kadas</a>. I have to admit that, unfortunately, but this part has outgrown me due to the specific solutions needed to be applied to the code, so I close and pass the floor to the co-author. |
+|  |  |
