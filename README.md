@@ -33,3 +33,8 @@
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Mało reprezentacyjny prototyp urządzenia (ale działa)<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - Hardly a representative prototype of the device (but it works)
+
+<div align="center"><img src="./schemat.png"/></div>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Schemat połączeniowy prototypu<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - Wiring diagram of the prototype
