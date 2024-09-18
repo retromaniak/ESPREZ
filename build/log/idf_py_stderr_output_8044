@@ -1,0 +1,58 @@
+[0;33m--- WARNING: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM11 instead...[0m
+[0;33m--- esp-idf-monitor 1.4.0 on \\.\COM11 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40056ea0: memchr in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x40056e9d: memchr in ROM
+0x42012bb9: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1514
+0x420106bd: vprintf at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x4201c3ad: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.3.1/components/log/log.c:210
+0x403801d9: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.3.1/components/log/log.c:220
+0x42008e96: tud_hid_set_report_cb at C:/Users/Adas/Desktop/tusb_hid/main/tusb_hid_example_main.c:108 (discriminator 1)
+0x4200a760: tud_task_ext at C:/Users/Adas/Desktop/tusb_hid/managed_components/espressif__tinyusb/src/device/usbd.c:544
+0x42009132: tud_task at C:/Users/Adas/Desktop/tusb_hid/managed_components/espressif__tinyusb/src/device/usbd.h:55
+ (inlined by) tusb_device_task at C:/Users/Adas/Desktop/tusb_hid/managed_components/espressif__esp_tinyusb/tusb_tasks.c:41
+0x4037a57e: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375988: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x40056ea0: memchr in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x40056e9d: memchr in ROM
+0x42012bb9: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1514
+0x420106bd: vprintf at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vprintf.c:34
+0x4201c3ad: esp_log_writev at C:/Espressif/frameworks/esp-idf-v5.3.1/components/log/log.c:210
+0x403801d9: esp_log_write at C:/Espressif/frameworks/esp-idf-v5.3.1/components/log/log.c:220
+0x42008e96: tud_hid_set_report_cb at C:/Users/Adas/Desktop/tusb_hid/main/tusb_hid_example_main.c:108 (discriminator 1)
+0x4200a760: tud_task_ext at C:/Users/Adas/Desktop/tusb_hid/managed_components/espressif__tinyusb/src/device/usbd.c:544
+0x42009132: tud_task at C:/Users/Adas/Desktop/tusb_hid/managed_components/espressif__tinyusb/src/device/usbd.h:55
+ (inlined by) tusb_device_task at C:/Users/Adas/Desktop/tusb_hid/managed_components/espressif__esp_tinyusb/tusb_tasks.c:41
+0x4037a57e: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375988: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33mTo exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0m
+Traceback (most recent call last):
+  File "C:\Espressif\frameworks\esp-idf-v5.3.1\tools/idf_monitor.py", line 11, in <module>
+    sys.exit(subprocess.run([sys.executable, '-m', 'esp_idf_monitor'] + sys.argv[1:]).returncode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adas\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adas\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1201, in communicate
+    self.wait()
+  File "C:\Users\Adas\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adas\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1590, in _wait
+    result = _winapi.WaitForSingleObject(self._handle,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

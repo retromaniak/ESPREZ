@@ -1,0 +1,335 @@
+xxxx�������pESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (27) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Sep 15 2024 13:01:47[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0b22ch ( 45612) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001b254 vaddr=3fc92500 size=02af4h ( 10996) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001dd50 vaddr=40374000 size=022c8h (  8904) load[0m
+[0;32mI (118) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1c41ch (115740) map[0m
+[0;32mI (145) esp_image: segment 4: paddr=0003c444 vaddr=403762c8 size=0c16ch ( 49516) load[0m
+[0;32mI (167) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (168) boot: Disabling RNG early entropy source...[0m
+[0;32mI (179) cpu_start: Multicore app[0m
+[0;32mI (188) cpu_start: Pro cpu start user code[0m
+[0;32mI (194) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (194) app_init: Application information:[0m
+[0;32mI (197) app_init: Project name:     tusb_hid[0m
+[0;32mI (201) app_init: App version:      1[0m
+[0;32mI (206) app_init: Compile time:     Sep 15 2024 13:01:38[0m
+[0;32mI (212) app_init: ELF file SHA256:  6ddfb1f95...[0m
+[0;32mI (217) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (222) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (227) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (232) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (236) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (244) heap_init: At 3FC95C20 len 00053AF0 (334 KiB): RAM[0m
+[0;32mI (250) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (256) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (262) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (269) spi_flash: detected chip: boya[0m
+[0;32mI (273) spi_flash: flash io: dio[0m
+[0;33mW (277) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (290) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (297) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (304) main_task: Started on CPU0[0m
+[0;32mI (324) main_task: Calling app_main()[0m
+[0;32mI (324) example: Inicjalizacja USB HID[0m
+[0;32mI (324) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0xb49       │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x64f       │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+USBD init on controller 0
+sizeof(usbd_device_t) = 43
+sizeof(tu_fifo_t) = 20
+sizeof(tu_edpt_stream_t) = 116
+HID init
+dwc2->guid = 0
+dwc2->gsnpsid = 4F54400A
+dwc2->ghwcfg1 = 0
+
+dwc2->ghwcfg2 = 224DD930
+hw_cfg2->op_mode = 0
+hw_cfg2->arch = 0
+hw_cfg2->point2point = 0
+hw_cfg2->hs_phy_type = 0
+hw_cfg2->fs_phy_type = 0
+hw_cfg2->num_dev_ep = 0
+hw_cfg2->num_host_ch = 0
+hw_cfg2->period_channel_support = 0
+hw_cfg2->enable_dynamic_fifo = 0
+hw_cfg2->mul_cpu_int = 0
+hw_cfg2->nperiod_tx_q_depth = 0
+hw_cfg2->host_period_tx_q_depth = 0
+hw_cfg2->dev_token_q_depth = 0
+hw_cfg2->otg_enable_ic_usb = 0
+
+dwc2->ghwcfg3 = C804B5
+hw_cfg3->xfer_size_width = 0
+hw_cfg3->packet_size_width = 0
+hw_cfg3->otg_enable = 0
+hw_cfg3->i2c_enable = 0
+hw_cfg3->vendor_ctrl_itf = 0
+hw_cfg3->optional_feature_removed = 0
+hw_cfg3->synch_reset = 0
+hw_cfg3->otg_adp_support = 0
+hw_cfg3->otg_enable_hsic = 0
+hw_cfg3->battery_charger_support = 0
+hw_cfg3->lpm_mode = 0
+hw_cfg3->total_fifo_size = 0
+
+dwc2->ghwcfg4 = D3F0A030
+hw_cfg4->num_dev_period_in_ep = 0
+hw_cfg4->power_optimized = 0
+hw_cfg4->ahb_freq_min = 0
+hw_cfg4->hibernation = 0
+hw_cfg4->service_interval_mode = 0
+hw_cfg4->ipg_isoc_en = 0
+hw_cfg4->acg_enable = 0
+hw_cfg4->utmi_phy_data_width = 0
+hw_cfg4->dev_ctrl_ep_num = 0
+hw_cfg4->iddg_filter_enabled = 0
+hw_cfg4->vbus_valid_filter_enabled = 0
+hw_cfg4->a_valid_filter_enabled = 0
+hw_cfg4->b_valid_filter_enabled = 0
+hw_cfg4->dedicated_fifos = 0
+hw_cfg4->num_dev_in_eps = 0
+hw_cfg4->dma_desc_enable = 0
+hw_cfg4->dma_dynamic = 0
+Fullspeed PHY init
+[0;32mI (634) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (634) example: USB HID zainicjalizowane[0m
+USBD Bus Reset : Full Speed
+
+USBD Setup Received 80 06 00 01 00 00 40 00 
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes ...
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+USBD Bus Reset : Full Speed
+
+USBD Setup Received 00 05 29 00 00 00 00 00 
+  Set Address
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00 
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes ...
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 FF 00 
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 34 bytes ...
+USBD Xfer Complete on EP 80 with 34 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 03 03 09 04 FF 00 
+  Get Descriptor String[3]
+  Queue EP 80 with 14 bytes ...
+USBD Xfer Complete on EP 80 with 14 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 03 00 00 FF 00 
+  Get Descriptor String[0]
+  Queue EP 80 with 4 bytes ...
+USBD Xfer Complete on EP 80 with 4 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 02 03 09 04 FF 00 
+  Get Descriptor String[2]
+  Queue EP 80 with 26 bytes ...
+USBD Xfer Complete on EP 80 with 26 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00 
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes ...
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 09 00 
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 9 bytes ...
+USBD Xfer Complete on EP 80 with 9 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 22 00 
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 34 bytes ...
+USBD Xfer Complete on EP 80 with 34 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 00 09 01 00 00 00 00 00 
+  Set Configuration
+  Open EP 81 with Size = 8
+    Allocated 8 bytes at offset 952
+  HID opened
+  Bind EP 81 to driver id 0
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 80 06 00 03 00 00 FF 00 
+  Get Descriptor String[0]
+  Queue EP 80 with 4 bytes ...
+USBD Xfer Complete on EP 80 with 4 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 03 00 00 FF 00 
+  Get Descriptor String[0]
+  Queue EP 80 with 4 bytes ...
+USBD Xfer Complete on EP 80 with 4 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 01 03 09 04 FF 00 
+  Get Descriptor String[1]
+  Queue EP 80 with 36 bytes ...
+USBD Xfer Complete on EP 80 with 36 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 01 03 09 04 FF 00 
+  Get Descriptor String[1]
+  Queue EP 80 with 36 bytes ...
+USBD Xfer Complete on EP 80 with 36 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 02 03 09 04 FF 00 
+  Get Descriptor String[2]
+  Queue EP 80 with 26 bytes ...
+USBD Xfer Complete on EP 80 with 26 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 02 03 09 04 FF 00 
+  Get Descriptor String[2]
+  Queue EP 80 with 26 bytes ...
+USBD Xfer Complete on EP 80 with 26 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 41 00 8E 8E 0E 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (3574) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (3584) example: Dane (ASCII): @��?[0m
+[0;32mI (3584) example: Dane (surowe):[0m
+[0;32mI (3584) example: Byte 0: 0x40[0m
+[0;32mI (3594) example: Byte 1: 0xA9[0m
+[0;32mI (3594) example: Byte 2: 0xC9[0m
+[0;32mI (3594) example: Byte 3: 0x3F[0m
+[0;32mI (3604) example: Byte 4: 0x00[0m
+[0;32mI (3604) example: Byte 5: 0x00[0m
+[0;32mI (3614) example: Byte 6: 0x00[0m
+[0;32mI (3614) example: Byte 7: 0x00[0m
+[0;32mI (3614) example: Byte 8: 0x00[0m
+[0;32mI (3624) example: Byte 9: 0x00[0m
+[0;32mI (3624) example: Byte 10: 0x00[0m
+[0;32mI (3624) example: Byte 11: 0x00[0m
+[0;32mI (3634) example: Byte 12: 0x00[0m
+[0;32mI (3634) example: Byte 13: 0x00[0m
+[0;32mI (3644) example: Byte 14: 0x00[0m
+[0;32mI (3644) example: Byte 15: 0x00[0m
+[0;32mI (3644) example: Byte 16: 0x00[0m
+[0;32mI (3654) example: Byte 17: 0x00[0m
+[0;32mI (3654) example: Byte 18: 0x00[0m
+[0;32mI (3654) example: Byte 19: 0x00[0m
+[0;32mI (3664) example: Byte 20: 0x28[0m
+[0;32mI (3664) example: Byte 21: 0x91[0m
+[0;32mI (3674) example: Byte 22: 0x00[0m
+[0;32mI (3674) example: Byte 23: 0x42[0m
+[0;32mI (3674) example: Byte 24: 0x00[0m
+[0;32mI (3684) example: Byte 25: 0x00[0m
+[0;32mI (3684) example: Byte 26: 0x00[0m
+[0;32mI (3694) example: Byte 27: 0x00[0m
+[0;32mI (3694) example: Byte 28: 0x00[0m
+[0;32mI (3694) example: Byte 29: 0x00[0m
+[0;32mI (3704) example: Byte 30: 0x00[0m
+[0;32mI (3704) example: Byte 31: 0x00[0m
+[0;32mI (3704) example: Byte 32: 0x00[0m
+[0;32mI (3714) example: Byte 33: 0x00[0m
+[0;32mI (3714) example: Byte 34: 0x00[0m
+[0;32mI (3724) example: Byte 35: 0x00[0m
+[0;32mI (3724) example: Byte 36: 0x00[0m
+[0;32mI (3724) example: Byte 37: 0x00[0m
+[0;32mI (3734) example: Byte 38: 0x00[0m
+[0;32mI (3734) example: Byte 39: 0x00[0m
+[0;32mI (3744) example: Byte 40: 0x00[0m
+[0;32mI (3744) example: Byte 41: 0x00[0m
+[0;32mI (3744) example: Byte 42: 0x00[0m
+[0;32mI (3754) example: Byte 43: 0x00[0m
+[0;32mI (3754) example: Byte 44: 0x00[0m
+[0;32mI (3754) example: Byte 45: 0x00[0m
+[0;32mI (3764) example: Byte 46: 0x00[0m
+[0;32mI (3764) example: Byte 47: 0x00[0m
+[0;32mI (3774) example: Byte 48: 0x00[0m
+[0;32mI (3774) example: Byte 49: 0x00[0m
+[0;32mI (3774) example: Byte 50: 0x00[0m
+[0;32mI (3784) example: Byte 51: 0x00[0m
+[0;32mI (3784) example: Byte 52: 0x00[0m
+[0;32mI (3784) example: Byte 53: 0x00[0m
+[0;32mI (3794) example: Byte 54: 0x00[0m
+[0;32mI (3794) example: Byte 55: 0x00[0m
+[0;32mI (3804) example: Byte 56: 0x00[0m
+[0;32mI (3804) example: Byte 57: 0x00[0m
+[0;32mI (3804) example: Byte 58: 0x00[0m
+[0;32mI (3814) example: Byte 59: 0x00[0m
+[0;32mI (3814) example: Byte 60: 0x00[0m
+[0;32mI (3824) example: Byte 61: 0x00[0m
+[0;32mI (3824) example: Byte 62: 0x00[0m
+[0;32mI (3824) example: Byte 63: 0x00[0m
+[0;32mI (3834) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes

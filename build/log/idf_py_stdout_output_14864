@@ -1,0 +1,1837 @@
+����������x���ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (27) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Sep 15 2024 13:01:47[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0b41ch ( 46108) map[0m
+[0;32mI (108) esp_image: segment 1: paddr=0001b444 vaddr=3fc92500 size=02af4h ( 10996) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001df40 vaddr=40374000 size=020d8h (  8408) load[0m
+[0;32mI (118) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1f808h (129032) map[0m
+[0;32mI (148) esp_image: segment 4: paddr=0003f830 vaddr=403760d8 size=0c35ch ( 50012) load[0m
+[0;32mI (170) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (170) boot: Disabling RNG early entropy source...[0m
+[0;32mI (182) cpu_start: Multicore app[0m
+[0;32mI (191) cpu_start: Pro cpu start user code[0m
+[0;32mI (196) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (196) app_init: Application information:[0m
+[0;32mI (199) app_init: Project name:     tusb_hid[0m
+[0;32mI (204) app_init: App version:      1[0m
+[0;32mI (208) app_init: Compile time:     Sep 15 2024 13:01:38[0m
+[0;32mI (214) app_init: ELF file SHA256:  0f8c636cf...[0m
+[0;32mI (220) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (224) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (229) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (234) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (239) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (246) heap_init: At 3FC95C20 len 00053AF0 (334 KiB): RAM[0m
+[0;32mI (252) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (258) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (264) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (272) spi_flash: detected chip: boya[0m
+[0;32mI (275) spi_flash: flash io: dio[0m
+[0;33mW (279) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (292) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (299) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (307) main_task: Started on CPU0[0m
+[0;32mI (327) main_task: Calling app_main()[0m
+[0;32mI (327) example: Inicjalizacja USB HID[0m
+[0;32mI (327) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0xb49       │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x64f       │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+USBD init on controller 0
+sizeof(usbd_device_t) = 43
+sizeof(tu_fifo_t) = 20
+sizeof(tu_edpt_stream_t) = 116
+HID init
+dwc2->guid = 0
+dwc2->gsnpsid = 4F54400A
+dwc2->ghwcfg1 = 0
+
+dwc2->ghwcfg2 = 224DD930
+hw_cfg2->op_mode = 0
+hw_cfg2->arch = 0
+hw_cfg2->point2point = 0
+hw_cfg2->hs_phy_type = 0
+hw_cfg2->fs_phy_type = 0
+hw_cfg2->num_dev_ep = 0
+hw_cfg2->num_host_ch = 0
+hw_cfg2->period_channel_support = 0
+hw_cfg2->enable_dynamic_fifo = 0
+hw_cfg2->mul_cpu_int = 0
+hw_cfg2->nperiod_tx_q_depth = 0
+hw_cfg2->host_period_tx_q_depth = 0
+hw_cfg2->dev_token_q_depth = 0
+hw_cfg2->otg_enable_ic_usb = 0
+
+dwc2->ghwcfg3 = C804B5
+hw_cfg3->xfer_size_width = 0
+hw_cfg3->packet_size_width = 0
+hw_cfg3->otg_enable = 0
+hw_cfg3->i2c_enable = 0
+hw_cfg3->vendor_ctrl_itf = 0
+hw_cfg3->optional_feature_removed = 0
+hw_cfg3->synch_reset = 0
+hw_cfg3->otg_adp_support = 0
+hw_cfg3->otg_enable_hsic = 0
+hw_cfg3->battery_charger_support = 0
+hw_cfg3->lpm_mode = 0
+hw_cfg3->total_fifo_size = 0
+
+dwc2->ghwcfg4 = D3F0A030
+hw_cfg4->num_dev_period_in_ep = 0
+hw_cfg4->power_optimized = 0
+hw_cfg4->ahb_freq_min = 0
+hw_cfg4->hibernation = 0
+hw_cfg4->service_interval_mode = 0
+hw_cfg4->ipg_isoc_en = 0
+hw_cfg4->acg_enable = 0
+hw_cfg4->utmi_phy_data_width = 0
+hw_cfg4->dev_ctrl_ep_num = 0
+hw_cfg4->iddg_filter_enabled = 0
+hw_cfg4->vbus_valid_filter_enabled = 0
+hw_cfg4->a_valid_filter_enabled = 0
+hw_cfg4->b_valid_filter_enabled = 0
+hw_cfg4->dedicated_fifos = 0
+hw_cfg4->num_dev_in_eps = 0
+hw_cfg4->dma_desc_enable = 0
+hw_cfg4->dma_dynamic = 0
+Fullspeed PHY init
+[0;32mI (637) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (637) example: USB HID zainicjalizowane[0m
+USBD Bus Reset : Full Speed
+
+USBD Setup Received 80 06 00 01 00 00 40 00 
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes ...
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+USBD Bus Reset : Full Speed
+
+USBD Setup Received 00 05 17 00 00 00 00 00 
+  Set Address
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00 
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes ...
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 FF 00 
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 34 bytes ...
+USBD Xfer Complete on EP 80 with 34 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 03 03 09 04 FF 00 
+  Get Descriptor String[3]
+  Queue EP 80 with 14 bytes ...
+USBD Xfer Complete on EP 80 with 14 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 03 00 00 FF 00 
+  Get Descriptor String[0]
+  Queue EP 80 with 4 bytes ...
+USBD Xfer Complete on EP 80 with 4 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 02 03 09 04 FF 00 
+  Get Descriptor String[2]
+  Queue EP 80 with 26 bytes ...
+USBD Xfer Complete on EP 80 with 26 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00 
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes ...
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 09 00 
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 9 bytes ...
+USBD Xfer Complete on EP 80 with 9 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 22 00 
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 34 bytes ...
+USBD Xfer Complete on EP 80 with 34 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 00 09 01 00 00 00 00 00 
+  Set Configuration
+  Open EP 81 with Size = 8
+    Allocated 8 bytes at offset 952
+  HID opened
+  Bind EP 81 to driver id 0
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 80 06 00 03 00 00 FF 00 
+  Get Descriptor String[0]
+  Queue EP 80 with 4 bytes ...
+USBD Xfer Complete on EP 80 with 4 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 03 00 00 FF 00 
+  Get Descriptor String[0]
+  Queue EP 80 with 4 bytes ...
+USBD Xfer Complete on EP 80 with 4 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 01 03 09 04 FF 00 
+  Get Descriptor String[1]
+  Queue EP 80 with 36 bytes ...
+USBD Xfer Complete on EP 80 with 36 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 01 03 09 04 FF 00 
+  Get Descriptor String[1]
+  Queue EP 80 with 36 bytes ...
+USBD Xfer Complete on EP 80 with 36 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 02 03 09 04 FF 00 
+  Get Descriptor String[2]
+  Queue EP 80 with 26 bytes ...
+USBD Xfer Complete on EP 80 with 26 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 02 03 09 04 FF 00 
+  Get Descriptor String[2]
+  Queue EP 80 with 26 bytes ...
+USBD Xfer Complete on EP 80 with 26 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 41 00 00 00 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0000 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (5417) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (5427) example: Dane (ASCII): 41 00 0000 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 01 01 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0101 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (76317) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (76327) example: Dane (ASCII): 41 00 0101 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 02 02 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0202 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (99757) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (99757) example: Dane (ASCII): 41 00 0202 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 01 01 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0101 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (102657) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (102667) example: Dane (ASCII): 41 00 0101 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 02 02 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0202 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (103287) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (103287) example: Dane (ASCII): 41 00 0202 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 03 03 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0303 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (104007) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (104017) example: Dane (ASCII): 41 00 0303 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 04 04 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0404 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (104557) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (104567) example: Dane (ASCII): 41 00 0404 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 05 05 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0505 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (105057) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (105057) example: Dane (ASCII): 41 00 0505 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 06 06 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0606 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (105587) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (105587) example: Dane (ASCII): 41 00 0606 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 07 07 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0707 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (105987) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (105987) example: Dane (ASCII): 41 00 0707 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 08 08 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0808 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (106327) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (106337) example: Dane (ASCII): 41 00 0808 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 09 09 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0909 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (106577) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (106577) example: Dane (ASCII): 41 00 0909 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0A 0A 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0A0A 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (106817) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (106827) example: Dane (ASCII): 41 00 0A0A 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0B 0B 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0B0B 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (107237) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (107247) example: Dane (ASCII): 41 00 0B0B 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0C 0C 0C 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0C0C 030C 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (107297) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (107307) example: Dane (ASCII): 41 00 0C0C 030C 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0B 0B 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0B0B 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (107657) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (107667) example: Dane (ASCII): 41 00 0B0B 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0A 0A 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0A0A 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (107697) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (107697) example: Dane (ASCII): 41 00 0A0A 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 09 09 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0909 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (107747) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (107747) example: Dane (ASCII): 41 00 0909 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 08 08 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0808 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (108117) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (108117) example: Dane (ASCII): 41 00 0808 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 07 07 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0707 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (108147) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (108157) example: Dane (ASCII): 41 00 0707 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 06 06 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0606 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (108427) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (108437) example: Dane (ASCII): 41 00 0606 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 05 05 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0505 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (108457) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (108467) example: Dane (ASCII): 41 00 0505 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 04 04 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0404 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (108487) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (108497) example: Dane (ASCII): 41 00 0404 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 03 03 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0303 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (108737) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (108737) example: Dane (ASCII): 41 00 0303 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 02 02 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0202 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (108767) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (108767) example: Dane (ASCII): 41 00 0202 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 01 01 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0101 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (108797) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (108797) example: Dane (ASCII): 41 00 0101 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 00 00 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0000 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (109057) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (109057) example: Dane (ASCII): 41 00 0000 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 00 00 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0000 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (142847) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (142857) example: Dane (ASCII): 41 00 0000 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 01 01 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0101 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (145597) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (145607) example: Dane (ASCII): 41 00 0101 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 02 02 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0202 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (145917) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (145927) example: Dane (ASCII): 41 00 0202 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 03 03 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0303 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (145967) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (145967) example: Dane (ASCII): 41 00 0303 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 04 04 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0404 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (146007) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (146017) example: Dane (ASCII): 41 00 0404 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 05 05 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0505 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (146377) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (146387) example: Dane (ASCII): 41 00 0505 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 06 06 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0606 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (146497) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (146497) example: Dane (ASCII): 41 00 0606 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 07 07 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0707 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (146677) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (146677) example: Dane (ASCII): 41 00 0707 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 08 08 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0808 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (146717) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (146727) example: Dane (ASCII): 41 00 0808 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 09 09 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0909 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (147367) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (147367) example: Dane (ASCII): 41 00 0909 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 08 08 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0808 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (165147) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (165157) example: Dane (ASCII): 41 00 0808 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 09 09 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0909 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (165707) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (165707) example: Dane (ASCII): 41 00 0909 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0A 0A 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0A0A 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (165747) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (165757) example: Dane (ASCII): 41 00 0A0A 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 08 08 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0808 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (272947) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (272947) example: Dane (ASCII): 41 00 0808 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 08 08 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0808 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (273097) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (273097) example: Dane (ASCII): 41 00 0808 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 08 08 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0808 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (273327) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (273337) example: Dane (ASCII): 41 00 0808 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 09 09 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0909 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (273357) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (273367) example: Dane (ASCII): 41 00 0909 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0B 0B 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0B0B 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (273387) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (273397) example: Dane (ASCII): 41 00 0B0B 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0C 0C 0C 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0C0C 030C 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (273417) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (273427) example: Dane (ASCII): 41 00 0C0C 030C 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 27 27 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 2727 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (273447) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (273457) example: Dane (ASCII): 41 00 2727 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 75 75 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 7575 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (273477) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (273487) example: Dane (ASCII): 41 00 7575 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C6 C6 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C6C6 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (273507) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (273517) example: Dane (ASCII): 41 00 C6C6 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F9 F9 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F9F9 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (273537) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (273547) example: Dane (ASCII): 41 00 F9F9 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (273567) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (273577) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FE FE 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FEFE 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (274787) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (274797) example: Dane (ASCII): 41 00 FEFE 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FA FA 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FAFA 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (274817) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (274827) example: Dane (ASCII): 41 00 FAFA 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 CB CB 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 CBCB 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (274847) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (274857) example: Dane (ASCII): 41 00 CBCB 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 A8 A8 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 A8A8 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (274877) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (274887) example: Dane (ASCII): 41 00 A8A8 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 94 94 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 9494 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (274907) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (274917) example: Dane (ASCII): 41 00 9494 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 8B 8B 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 8B8B 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (274937) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (274947) example: Dane (ASCII): 41 00 8B8B 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 87 87 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 8787 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (274967) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (274977) example: Dane (ASCII): 41 00 8787 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 82 82 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 8282 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (274997) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275007) example: Dane (ASCII): 41 00 8282 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 80 80 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 8080 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275027) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275037) example: Dane (ASCII): 41 00 8080 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 7E 7E 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 7E7E 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275057) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275067) example: Dane (ASCII): 41 00 7E7E 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 8A 8A 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 8A8A 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275087) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275097) example: Dane (ASCII): 41 00 8A8A 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 AD AD 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 ADAD 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275117) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275127) example: Dane (ASCII): 41 00 ADAD 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 CF CF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 CFCF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275147) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275157) example: Dane (ASCII): 41 00 CFCF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 DE DE 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 DEDE 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275177) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275187) example: Dane (ASCII): 41 00 DEDE 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EB EB 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EBEB 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275207) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275217) example: Dane (ASCII): 41 00 EBEB 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F7 F7 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F7F7 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275237) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275247) example: Dane (ASCII): 41 00 F7F7 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F8 F8 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F8F8 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275267) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275277) example: Dane (ASCII): 41 00 F8F8 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FB FB 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FBFB 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275297) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275307) example: Dane (ASCII): 41 00 FBFB 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275327) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275337) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275397) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275407) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (275427) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (275437) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 00 00 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0000 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (276597) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (276607) example: Dane (ASCII): 41 00 0000 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 02 02 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0202 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (279967) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (279977) example: Dane (ASCII): 41 00 0202 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 04 04 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0404 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (279997) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (280007) example: Dane (ASCII): 41 00 0404 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 06 06 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0606 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (280027) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (280037) example: Dane (ASCII): 41 00 0606 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 08 08 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0808 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (280057) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (280067) example: Dane (ASCII): 41 00 0808 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0A 0A 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0A0A 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (280087) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (280097) example: Dane (ASCII): 41 00 0A0A 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0C 0C 0C 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0C0C 030C 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (280117) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (280127) example: Dane (ASCII): 41 00 0C0C 030C 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0E 0E 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 0E0E 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (280147) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (280157) example: Dane (ASCII): 41 00 0E0E 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 10 10 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 1010 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (280177) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (280187) example: Dane (ASCII): 41 00 1010 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 10 10 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 1010 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (280407) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (280417) example: Dane (ASCII): 41 00 1010 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 12 12 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 1212 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (285597) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (285607) example: Dane (ASCII): 41 00 1212 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 14 14 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 1414 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (285627) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (285637) example: Dane (ASCII): 41 00 1414 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 16 16 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 1616 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (285657) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (285667) example: Dane (ASCII): 41 00 1616 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 18 18 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 1818 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (285687) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (285697) example: Dane (ASCII): 41 00 1818 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 1A 1A 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 1A1A 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (285717) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (285727) example: Dane (ASCII): 41 00 1A1A 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 1C 1C 0C 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 1C1C 030C 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (285747) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (285757) example: Dane (ASCII): 41 00 1C1C 030C 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 1E 1E 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 1E1E 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (285777) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (285787) example: Dane (ASCII): 41 00 1E1E 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 20 20 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 2020 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (285807) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (285817) example: Dane (ASCII): 41 00 2020 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 22 22 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 2222 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (285837) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (285847) example: Dane (ASCII): 41 00 2222 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 22 22 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 2222 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (285987) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (285987) example: Dane (ASCII): 41 00 2222 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 24 24 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 2424 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (286537) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (286537) example: Dane (ASCII): 41 00 2424 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 26 26 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 2626 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (286567) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (286567) example: Dane (ASCII): 41 00 2626 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 28 28 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 2828 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (286597) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (286597) example: Dane (ASCII): 41 00 2828 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 2A 2A 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 2A2A 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (286627) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (286627) example: Dane (ASCII): 41 00 2A2A 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 2C 2C 0C 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 2C2C 030C 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (286657) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (286657) example: Dane (ASCII): 41 00 2C2C 030C 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 2E 2E 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 2E2E 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (286687) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (286687) example: Dane (ASCII): 41 00 2E2E 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 30 30 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 3030 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (286717) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (286717) example: Dane (ASCII): 41 00 3030 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 32 32 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 3232 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (286747) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (286747) example: Dane (ASCII): 41 00 3232 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 34 34 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 3434 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (286777) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (286777) example: Dane (ASCII): 41 00 3434 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 36 36 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 3636 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (286807) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (286807) example: Dane (ASCII): 41 00 3636 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 36 36 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 3636 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (287147) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (287157) example: Dane (ASCII): 41 00 3636 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 36 36 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 3636 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (287847) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (287857) example: Dane (ASCII): 41 00 3636 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 37 37 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 3737 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (287957) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (287957) example: Dane (ASCII): 41 00 3737 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 38 38 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 3838 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (287987) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (287987) example: Dane (ASCII): 41 00 3838 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 3E 3E 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 3E3E 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288017) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288017) example: Dane (ASCII): 41 00 3E3E 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 47 47 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 4747 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288047) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288047) example: Dane (ASCII): 41 00 4747 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 53 53 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 5353 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288067) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288077) example: Dane (ASCII): 41 00 5353 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 5E 5E 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 5E5E 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288097) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288107) example: Dane (ASCII): 41 00 5E5E 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 65 65 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 6565 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288127) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288137) example: Dane (ASCII): 41 00 6565 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 72 72 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 7272 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288157) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288167) example: Dane (ASCII): 41 00 7272 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 8E 8E 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 8E8E 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288187) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288197) example: Dane (ASCII): 41 00 8E8E 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 9D 9D 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 9D9D 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288217) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288227) example: Dane (ASCII): 41 00 9D9D 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 A5 A5 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 A5A5 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288247) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288257) example: Dane (ASCII): 41 00 A5A5 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 BF BF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 BFBF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288277) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288287) example: Dane (ASCII): 41 00 BFBF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 DD DD 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 DDDD 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288307) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288317) example: Dane (ASCII): 41 00 DDDD 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E3 E3 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E3E3 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288337) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288347) example: Dane (ASCII): 41 00 E3E3 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E6 E6 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E6E6 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288367) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288377) example: Dane (ASCII): 41 00 E6E6 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F1 F1 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F1F1 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288397) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288407) example: Dane (ASCII): 41 00 F1F1 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FB FB 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FBFB 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288427) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288437) example: Dane (ASCII): 41 00 FBFB 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FC FC 0C 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FCFC 030C 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288457) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288467) example: Dane (ASCII): 41 00 FCFC 030C 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FD FD 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FDFD 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288487) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288497) example: Dane (ASCII): 41 00 FDFD 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (288517) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (288527) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (289057) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (289067) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (289087) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (289097) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (352837) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (352847) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (352927) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (352937) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (352957) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (352967) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FD FD 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FDFD 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (355347) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (355357) example: Dane (ASCII): 41 00 FDFD 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FB FB 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FBFB 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (355397) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (355407) example: Dane (ASCII): 41 00 FBFB 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FB FB 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FBFB 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (355507) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (355507) example: Dane (ASCII): 41 00 FBFB 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F9 F9 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F9F9 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (356137) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (356147) example: Dane (ASCII): 41 00 F9F9 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F7 F7 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F7F7 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (356337) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (356347) example: Dane (ASCII): 41 00 F7F7 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F5 F5 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F5F5 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (356367) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (356377) example: Dane (ASCII): 41 00 F5F5 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F5 F5 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F5F5 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (356577) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (356587) example: Dane (ASCII): 41 00 F5F5 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F3 F3 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F3F3 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (358227) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (358237) example: Dane (ASCII): 41 00 F3F3 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F1 F1 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F1F1 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (358407) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (358417) example: Dane (ASCII): 41 00 F1F1 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EF EF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EFEF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (358437) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (358447) example: Dane (ASCII): 41 00 EFEF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 ED ED 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EDED 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (358467) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (358477) example: Dane (ASCII): 41 00 EDED 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EB EB 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EBEB 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (358497) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (358507) example: Dane (ASCII): 41 00 EBEB 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E9 E9 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E9E9 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (358547) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (358547) example: Dane (ASCII): 41 00 E9E9 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E7 E7 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E7E7 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (358597) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (358607) example: Dane (ASCII): 41 00 E7E7 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E7 E7 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E7E7 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (358847) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (358857) example: Dane (ASCII): 41 00 E7E7 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E7 E7 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E7E7 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (359167) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (359177) example: Dane (ASCII): 41 00 E7E7 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E8 E8 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E8E8 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (359237) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (359237) example: Dane (ASCII): 41 00 E8E8 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E9 E9 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E9E9 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (359257) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (359267) example: Dane (ASCII): 41 00 E9E9 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EF EF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EFEF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (359287) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (359297) example: Dane (ASCII): 41 00 EFEF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F7 F7 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F7F7 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (359317) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (359327) example: Dane (ASCII): 41 00 F7F7 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FE FE 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FEFE 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (359347) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (359357) example: Dane (ASCII): 41 00 FEFE 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (359377) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (359387) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FE FE 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FEFE 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (360977) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (360987) example: Dane (ASCII): 41 00 FEFE 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FD FD 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FDFD 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361007) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361017) example: Dane (ASCII): 41 00 FDFD 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F9 F9 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F9F9 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361037) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361047) example: Dane (ASCII): 41 00 F9F9 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F2 F2 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F2F2 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361067) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361077) example: Dane (ASCII): 41 00 F2F2 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EF EF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EFEF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361097) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361107) example: Dane (ASCII): 41 00 EFEF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 ED ED 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EDED 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361127) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361137) example: Dane (ASCII): 41 00 EDED 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EA EA 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EAEA 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361157) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361167) example: Dane (ASCII): 41 00 EAEA 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E8 E8 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E8E8 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361187) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361197) example: Dane (ASCII): 41 00 E8E8 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E1 E1 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E1E1 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361217) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361227) example: Dane (ASCII): 41 00 E1E1 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 DC DC 0C 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 DCDC 030C 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361247) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361257) example: Dane (ASCII): 41 00 DCDC 030C 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 DA DA 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 DADA 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361277) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361287) example: Dane (ASCII): 41 00 DADA 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D8 D8 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D8D8 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361307) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361317) example: Dane (ASCII): 41 00 D8D8 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D7 D7 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D7D7 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361337) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361347) example: Dane (ASCII): 41 00 D7D7 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D6 D6 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D6D6 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361367) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361377) example: Dane (ASCII): 41 00 D6D6 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D5 D5 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D5D5 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361397) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361407) example: Dane (ASCII): 41 00 D5D5 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D3 D3 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D3D3 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361427) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361437) example: Dane (ASCII): 41 00 D3D3 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D1 D1 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D1D1 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361457) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361467) example: Dane (ASCII): 41 00 D1D1 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 CD CD 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 CDCD 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361487) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361497) example: Dane (ASCII): 41 00 CDCD 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C9 C9 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C9C9 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361517) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361527) example: Dane (ASCII): 41 00 C9C9 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C5 C5 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C5C5 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361547) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361557) example: Dane (ASCII): 41 00 C5C5 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C3 C3 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C3C3 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361577) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361587) example: Dane (ASCII): 41 00 C3C3 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C2 C2 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C2C2 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361607) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361617) example: Dane (ASCII): 41 00 C2C2 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C1 C1 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C1C1 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361637) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361647) example: Dane (ASCII): 41 00 C1C1 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C2 C2 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C2C2 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (361897) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (361907) example: Dane (ASCII): 41 00 C2C2 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C3 C3 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C3C3 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362157) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362167) example: Dane (ASCII): 41 00 C3C3 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C4 C4 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C4C4 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362187) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362197) example: Dane (ASCII): 41 00 C4C4 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C5 C5 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C5C5 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362287) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362297) example: Dane (ASCII): 41 00 C5C5 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C6 C6 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C6C6 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362317) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362327) example: Dane (ASCII): 41 00 C6C6 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C7 C7 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C7C7 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362347) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362357) example: Dane (ASCII): 41 00 C7C7 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 C8 C8 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 C8C8 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362377) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362387) example: Dane (ASCII): 41 00 C8C8 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 CA CA 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 CACA 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362407) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362417) example: Dane (ASCII): 41 00 CACA 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 CD CD 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 CDCD 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362437) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362447) example: Dane (ASCII): 41 00 CDCD 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D1 D1 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D1D1 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362467) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362477) example: Dane (ASCII): 41 00 D1D1 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D3 D3 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D3D3 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362497) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362507) example: Dane (ASCII): 41 00 D3D3 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D5 D5 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D5D5 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362527) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362537) example: Dane (ASCII): 41 00 D5D5 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D6 D6 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D6D6 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362557) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362567) example: Dane (ASCII): 41 00 D6D6 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 D8 D8 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 D8D8 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362587) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362597) example: Dane (ASCII): 41 00 D8D8 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 DA DA 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 DADA 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362617) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362627) example: Dane (ASCII): 41 00 DADA 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 DB DB 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 DBDB 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362647) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362657) example: Dane (ASCII): 41 00 DBDB 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 DC DC 0C 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 DCDC 030C 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362677) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362687) example: Dane (ASCII): 41 00 DCDC 030C 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 DD DD 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 DDDD 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362707) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362717) example: Dane (ASCII): 41 00 DDDD 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 DE DE 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 DEDE 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362737) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362747) example: Dane (ASCII): 41 00 DEDE 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 DF DF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 DFDF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362767) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362777) example: Dane (ASCII): 41 00 DFDF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E0 E0 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E0E0 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362797) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362807) example: Dane (ASCII): 41 00 E0E0 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E1 E1 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E1E1 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362827) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362837) example: Dane (ASCII): 41 00 E1E1 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E4 E4 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E4E4 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362857) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362867) example: Dane (ASCII): 41 00 E4E4 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E5 E5 05 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E5E5 0305 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362887) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362887) example: Dane (ASCII): 41 00 E5E5 0305 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E6 E6 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E6E6 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362917) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362927) example: Dane (ASCII): 41 00 E6E6 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E7 E7 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E7E7 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362947) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362957) example: Dane (ASCII): 41 00 E7E7 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E8 E8 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E8E8 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (362977) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (362987) example: Dane (ASCII): 41 00 E8E8 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 E9 E9 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 E9E9 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363007) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363017) example: Dane (ASCII): 41 00 E9E9 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EA EA 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EAEA 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363047) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363047) example: Dane (ASCII): 41 00 EAEA 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EB EB 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EBEB 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363077) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363077) example: Dane (ASCII): 41 00 EBEB 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EC EC 0C 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 ECEC 030C 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363107) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363107) example: Dane (ASCII): 41 00 ECEC 030C 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 ED ED 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EDED 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363137) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363137) example: Dane (ASCII): 41 00 EDED 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EE EE 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EEEE 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363167) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363167) example: Dane (ASCII): 41 00 EEEE 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 EF EF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 EFEF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363197) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363197) example: Dane (ASCII): 41 00 EFEF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F0 F0 00 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F0F0 0300 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363227) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363227) example: Dane (ASCII): 41 00 F0F0 0300 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F1 F1 01 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F1F1 0301 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363297) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363297) example: Dane (ASCII): 41 00 F1F1 0301 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F2 F2 02 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F2F2 0302 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363347) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363357) example: Dane (ASCII): 41 00 F2F2 0302 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F3 F3 03 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F3F3 0303 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363377) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363387) example: Dane (ASCII): 41 00 F3F3 0303 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F4 F4 04 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F4F4 0304 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363457) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363467) example: Dane (ASCII): 41 00 F4F4 0304 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F6 F6 06 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F6F6 0306 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363517) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363527) example: Dane (ASCII): 41 00 F6F6 0306 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F7 F7 07 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F7F7 0307 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363547) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363557) example: Dane (ASCII): 41 00 F7F7 0307 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F8 F8 08 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F8F8 0308 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363577) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363587) example: Dane (ASCII): 41 00 F8F8 0308 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 F9 F9 09 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 F9F9 0309 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363607) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363617) example: Dane (ASCII): 41 00 F9F9 0309 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FA FA 0A 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FAFA 030A 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363647) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363657) example: Dane (ASCII): 41 00 FAFA 030A 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FB FB 0B 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FBFB 030B 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363717) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363727) example: Dane (ASCII): 41 00 FBFB 030B 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FC FC 0C 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FCFC 030C 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363747) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363757) example: Dane (ASCII): 41 00 FCFC 030C 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FD FD 0D 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FDFD 030D 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363797) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363797) example: Dane (ASCII): 41 00 FDFD 030D 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FE FE 0E 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FEFE 030E 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363867) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363867) example: Dane (ASCII): 41 00 FEFE 030E 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (363917) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (363917) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (367327) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (367337) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 FF FF 0F 03 00 00 
+Odebrano vendor-specific żądanie
+Zawartość bufora: 41 00 FFFF 030F 0000  Queue EP 80 with 0 bytes ...
+[0;32mI (367357) example: Odebrano dane od hosta! Rozmiar bufora: 20[0m
+[0;32mI (367367) example: Dane (ASCII): 41 00 FFFF 030F 0000[0m
+USBD Xfer Complete on EP 80 with 0 bytes

@@ -1,0 +1,1065 @@
+�xx�x���ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (27) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Sep 15 2024 13:01:47[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0b22ch ( 45612) map[0m
+[0;32mI (107) esp_image: segment 1: paddr=0001b254 vaddr=3fc92500 size=02af4h ( 10996) load[0m
+[0;32mI (110) esp_image: segment 2: paddr=0001dd50 vaddr=40374000 size=022c8h (  8904) load[0m
+[0;32mI (118) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=1c41ch (115740) map[0m
+[0;32mI (145) esp_image: segment 4: paddr=0003c444 vaddr=403762c8 size=0c16ch ( 49516) load[0m
+[0;32mI (167) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (168) boot: Disabling RNG early entropy source...[0m
+[0;32mI (179) cpu_start: Multicore app[0m
+[0;32mI (188) cpu_start: Pro cpu start user code[0m
+[0;32mI (189) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (194) app_init: Application information:[0m
+[0;32mI (194) app_init: Project name:     tusb_hid[0m
+[0;32mI (197) app_init: App version:      1[0m
+[0;32mI (201) app_init: Compile time:     Sep 15 2024 13:01:38[0m
+[0;32mI (207) app_init: ELF file SHA256:  6ddfb1f95...[0m
+[0;32mI (212) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (217) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (222) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (227) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (232) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (239) heap_init: At 3FC95C20 len 00053AF0 (334 KiB): RAM[0m
+[0;32mI (245) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (251) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (265) spi_flash: detected chip: boya[0m
+[0;32mI (268) spi_flash: flash io: dio[0m
+[0;33mW (272) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (285) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (292) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (299) main_task: Started on CPU0[0m
+[0;32mI (319) main_task: Calling app_main()[0m
+[0;32mI (319) example: Inicjalizacja USB HID[0m
+[0;32mI (319) tusb_desc: 
+┌─────────────────────────────────┐
+│  USB Device Descriptor Summary  │
+├───────────────────┬─────────────┤
+│bDeviceClass       │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceSubClass    │ 0           │
+├───────────────────┼─────────────┤
+│bDeviceProtocol    │ 0           │
+├───────────────────┼─────────────┤
+│bMaxPacketSize0    │ 64          │
+├───────────────────┼─────────────┤
+│idVendor           │ 0xb49       │
+├───────────────────┼─────────────┤
+│idProduct          │ 0x64f       │
+├───────────────────┼─────────────┤
+│bcdDevice          │ 0x100       │
+├───────────────────┼─────────────┤
+│iManufacturer      │ 0x1         │
+├───────────────────┼─────────────┤
+│iProduct           │ 0x2         │
+├───────────────────┼─────────────┤
+│iSerialNumber      │ 0x3         │
+├───────────────────┼─────────────┤
+│bNumConfigurations │ 0x1         │
+└───────────────────┴─────────────┘[0m
+USBD init on controller 0
+sizeof(usbd_device_t) = 43
+sizeof(tu_fifo_t) = 20
+sizeof(tu_edpt_stream_t) = 116
+HID init
+dwc2->guid = 0
+dwc2->gsnpsid = 4F54400A
+dwc2->ghwcfg1 = 0
+
+dwc2->ghwcfg2 = 224DD930
+hw_cfg2->op_mode = 0
+hw_cfg2->arch = 0
+hw_cfg2->point2point = 0
+hw_cfg2->hs_phy_type = 0
+hw_cfg2->fs_phy_type = 0
+hw_cfg2->num_dev_ep = 0
+hw_cfg2->num_host_ch = 0
+hw_cfg2->period_channel_support = 0
+hw_cfg2->enable_dynamic_fifo = 0
+hw_cfg2->mul_cpu_int = 0
+hw_cfg2->nperiod_tx_q_depth = 0
+hw_cfg2->host_period_tx_q_depth = 0
+hw_cfg2->dev_token_q_depth = 0
+hw_cfg2->otg_enable_ic_usb = 0
+
+dwc2->ghwcfg3 = C804B5
+hw_cfg3->xfer_size_width = 0
+hw_cfg3->packet_size_width = 0
+hw_cfg3->otg_enable = 0
+hw_cfg3->i2c_enable = 0
+hw_cfg3->vendor_ctrl_itf = 0
+hw_cfg3->optional_feature_removed = 0
+hw_cfg3->synch_reset = 0
+hw_cfg3->otg_adp_support = 0
+hw_cfg3->otg_enable_hsic = 0
+hw_cfg3->battery_charger_support = 0
+hw_cfg3->lpm_mode = 0
+hw_cfg3->total_fifo_size = 0
+
+dwc2->ghwcfg4 = D3F0A030
+hw_cfg4->num_dev_period_in_ep = 0
+hw_cfg4->power_optimized = 0
+hw_cfg4->ahb_freq_min = 0
+hw_cfg4->hibernation = 0
+hw_cfg4->service_interval_mode = 0
+hw_cfg4->ipg_isoc_en = 0
+hw_cfg4->acg_enable = 0
+hw_cfg4->utmi_phy_data_width = 0
+hw_cfg4->dev_ctrl_ep_num = 0
+hw_cfg4->iddg_filter_enabled = 0
+hw_cfg4->vbus_valid_filter_enabled = 0
+hw_cfg4->a_valid_filter_enabled = 0
+hw_cfg4->b_valid_filter_enabled = 0
+hw_cfg4->dedicated_fifos = 0
+hw_cfg4->num_dev_in_eps = 0
+hw_cfg4->dma_desc_enable = 0
+hw_cfg4->dma_dynamic = 0
+Fullspeed PHY init
+[0;32mI (629) TinyUSB: TinyUSB Driver installed[0m
+[0;32mI (629) example: USB HID zainicjalizowane[0m
+USBD Bus Reset : Full Speed
+
+USBD Setup Received 80 06 00 01 00 00 40 00 
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes ...
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+USBD Bus Reset : Full Speed
+
+USBD Setup Received 00 05 13 00 00 00 00 00 
+  Set Address
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00 
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes ...
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 FF 00 
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 34 bytes ...
+USBD Xfer Complete on EP 80 with 34 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 03 03 09 04 FF 00 
+  Get Descriptor String[3]
+  Queue EP 80 with 14 bytes ...
+USBD Xfer Complete on EP 80 with 14 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 03 00 00 FF 00 
+  Get Descriptor String[0]
+  Queue EP 80 with 4 bytes ...
+USBD Xfer Complete on EP 80 with 4 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 02 03 09 04 FF 00 
+  Get Descriptor String[2]
+  Queue EP 80 with 26 bytes ...
+USBD Xfer Complete on EP 80 with 26 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 01 00 00 12 00 
+  Get Descriptor Device
+  Queue EP 80 with 18 bytes ...
+USBD Xfer Complete on EP 80 with 18 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 09 00 
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 9 bytes ...
+USBD Xfer Complete on EP 80 with 9 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 02 00 00 22 00 
+  Get Descriptor Configuration[0]
+  Queue EP 80 with 34 bytes ...
+USBD Xfer Complete on EP 80 with 34 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 00 09 01 00 00 00 00 00 
+  Set Configuration
+  Open EP 81 with Size = 8
+    Allocated 8 bytes at offset 952
+  HID opened
+  Bind EP 81 to driver id 0
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 80 06 00 03 00 00 FF 00 
+  Get Descriptor String[0]
+  Queue EP 80 with 4 bytes ...
+USBD Xfer Complete on EP 80 with 4 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 01 03 09 04 FF 00 
+  Get Descriptor String[1]
+  Queue EP 80 with 36 bytes ...
+USBD Xfer Complete on EP 80 with 36 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 00 03 00 00 FF 00 
+  Get Descriptor String[0]
+  Queue EP 80 with 4 bytes ...
+USBD Xfer Complete on EP 80 with 4 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 02 03 09 04 FF 00 
+  Get Descriptor String[2]
+  Queue EP 80 with 26 bytes ...
+USBD Xfer Complete on EP 80 with 26 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 01 03 09 04 FF 00 
+  Get Descriptor String[1]
+  Queue EP 80 with 36 bytes ...
+USBD Xfer Complete on EP 80 with 36 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 80 06 02 03 09 04 FF 00 
+  Get Descriptor String[2]
+  Queue EP 80 with 26 bytes ...
+USBD Xfer Complete on EP 80 with 26 bytes
+  Queue EP 00 with 0 bytes ...
+USBD Xfer Complete on EP 00 with 0 bytes
+
+USBD Setup Received 41 00 8E 8E 0E 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (2979) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (2979) example: Dane (ASCII): @��?[0m
+[0;32mI (2979) example: Dane (surowe):[0m
+[0;32mI (2989) example: Byte 0: 0x40[0m
+[0;32mI (2989) example: Byte 1: 0xA9[0m
+[0;32mI (2999) example: Byte 2: 0xC9[0m
+[0;32mI (2999) example: Byte 3: 0x3F[0m
+[0;32mI (2999) example: Byte 4: 0x00[0m
+[0;32mI (3009) example: Byte 5: 0x00[0m
+[0;32mI (3009) example: Byte 6: 0x00[0m
+[0;32mI (3009) example: Byte 7: 0x00[0m
+[0;32mI (3019) example: Byte 8: 0x00[0m
+[0;32mI (3019) example: Byte 9: 0x00[0m
+[0;32mI (3029) example: Byte 10: 0x00[0m
+[0;32mI (3029) example: Byte 11: 0x00[0m
+[0;32mI (3029) example: Byte 12: 0x00[0m
+[0;32mI (3039) example: Byte 13: 0x00[0m
+[0;32mI (3039) example: Byte 14: 0x00[0m
+[0;32mI (3039) example: Byte 15: 0x00[0m
+[0;32mI (3049) example: Byte 16: 0x00[0m
+[0;32mI (3049) example: Byte 17: 0x00[0m
+[0;32mI (3059) example: Byte 18: 0x00[0m
+[0;32mI (3059) example: Byte 19: 0x00[0m
+[0;32mI (3059) example: Byte 20: 0x28[0m
+[0;32mI (3069) example: Byte 21: 0x91[0m
+[0;32mI (3069) example: Byte 22: 0x00[0m
+[0;32mI (3069) example: Byte 23: 0x42[0m
+[0;32mI (3079) example: Byte 24: 0x00[0m
+[0;32mI (3079) example: Byte 25: 0x00[0m
+[0;32mI (3089) example: Byte 26: 0x00[0m
+[0;32mI (3089) example: Byte 27: 0x00[0m
+[0;32mI (3089) example: Byte 28: 0x00[0m
+[0;32mI (3099) example: Byte 29: 0x00[0m
+[0;32mI (3099) example: Byte 30: 0x00[0m
+[0;32mI (3109) example: Byte 31: 0x00[0m
+[0;32mI (3109) example: Byte 32: 0x00[0m
+[0;32mI (3109) example: Byte 33: 0x00[0m
+[0;32mI (3119) example: Byte 34: 0x00[0m
+[0;32mI (3119) example: Byte 35: 0x00[0m
+[0;32mI (3119) example: Byte 36: 0x00[0m
+[0;32mI (3129) example: Byte 37: 0x00[0m
+[0;32mI (3129) example: Byte 38: 0x00[0m
+[0;32mI (3139) example: Byte 39: 0x00[0m
+[0;32mI (3139) example: Byte 40: 0x00[0m
+[0;32mI (3139) example: Byte 41: 0x00[0m
+[0;32mI (3149) example: Byte 42: 0x00[0m
+[0;32mI (3149) example: Byte 43: 0x00[0m
+[0;32mI (3159) example: Byte 44: 0x00[0m
+[0;32mI (3159) example: Byte 45: 0x00[0m
+[0;32mI (3159) example: Byte 46: 0x00[0m
+[0;32mI (3169) example: Byte 47: 0x00[0m
+[0;32mI (3169) example: Byte 48: 0x00[0m
+[0;32mI (3169) example: Byte 49: 0x00[0m
+[0;32mI (3179) example: Byte 50: 0x00[0m
+[0;32mI (3179) example: Byte 51: 0x00[0m
+[0;32mI (3189) example: Byte 52: 0x00[0m
+[0;32mI (3189) example: Byte 53: 0x00[0m
+[0;32mI (3189) example: Byte 54: 0x00[0m
+[0;32mI (3199) example: Byte 55: 0x00[0m
+[0;32mI (3199) example: Byte 56: 0x00[0m
+[0;32mI (3199) example: Byte 57: 0x00[0m
+[0;32mI (3209) example: Byte 58: 0x00[0m
+[0;32mI (3209) example: Byte 59: 0x00[0m
+[0;32mI (3219) example: Byte 60: 0x00[0m
+[0;32mI (3219) example: Byte 61: 0x00[0m
+[0;32mI (3219) example: Byte 62: 0x00[0m
+[0;32mI (3229) example: Byte 63: 0x00[0m
+[0;32mI (3229) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 00 00 00 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (123209) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (123209) example: Dane (ASCII): @��?[0m
+[0;32mI (123209) example: Dane (surowe):[0m
+[0;32mI (123219) example: Byte 0: 0x40[0m
+[0;32mI (123219) example: Byte 1: 0xA9[0m
+[0;32mI (123229) example: Byte 2: 0xC9[0m
+[0;32mI (123229) example: Byte 3: 0x3F[0m
+[0;32mI (123229) example: Byte 4: 0x00[0m
+[0;32mI (123239) example: Byte 5: 0x00[0m
+[0;32mI (123239) example: Byte 6: 0x00[0m
+[0;32mI (123249) example: Byte 7: 0x00[0m
+[0;32mI (123249) example: Byte 8: 0x00[0m
+[0;32mI (123249) example: Byte 9: 0x00[0m
+[0;32mI (123259) example: Byte 10: 0x00[0m
+[0;32mI (123259) example: Byte 11: 0x00[0m
+[0;32mI (123269) example: Byte 12: 0x00[0m
+[0;32mI (123269) example: Byte 13: 0x00[0m
+[0;32mI (123269) example: Byte 14: 0x00[0m
+[0;32mI (123279) example: Byte 15: 0x00[0m
+[0;32mI (123279) example: Byte 16: 0x00[0m
+[0;32mI (123289) example: Byte 17: 0x00[0m
+[0;32mI (123289) example: Byte 18: 0x00[0m
+[0;32mI (123289) example: Byte 19: 0x00[0m
+[0;32mI (123299) example: Byte 20: 0x28[0m
+[0;32mI (123299) example: Byte 21: 0x91[0m
+[0;32mI (123309) example: Byte 22: 0x00[0m
+[0;32mI (123309) example: Byte 23: 0x42[0m
+[0;32mI (123309) example: Byte 24: 0x00[0m
+[0;32mI (123319) example: Byte 25: 0x00[0m
+[0;32mI (123319) example: Byte 26: 0x00[0m
+[0;32mI (123329) example: Byte 27: 0x00[0m
+[0;32mI (123329) example: Byte 28: 0x00[0m
+[0;32mI (123329) example: Byte 29: 0x00[0m
+[0;32mI (123339) example: Byte 30: 0x00[0m
+[0;32mI (123339) example: Byte 31: 0x00[0m
+[0;32mI (123349) example: Byte 32: 0x00[0m
+[0;32mI (123349) example: Byte 33: 0x00[0m
+[0;32mI (123349) example: Byte 34: 0x00[0m
+[0;32mI (123359) example: Byte 35: 0x00[0m
+[0;32mI (123359) example: Byte 36: 0x00[0m
+[0;32mI (123369) example: Byte 37: 0x00[0m
+[0;32mI (123369) example: Byte 38: 0x00[0m
+[0;32mI (123369) example: Byte 39: 0x00[0m
+[0;32mI (123379) example: Byte 40: 0x00[0m
+[0;32mI (123379) example: Byte 41: 0x00[0m
+[0;32mI (123389) example: Byte 42: 0x00[0m
+[0;32mI (123389) example: Byte 43: 0x00[0m
+[0;32mI (123389) example: Byte 44: 0x00[0m
+[0;32mI (123399) example: Byte 45: 0x00[0m
+[0;32mI (123399) example: Byte 46: 0x00[0m
+[0;32mI (123409) example: Byte 47: 0x00[0m
+[0;32mI (123409) example: Byte 48: 0x00[0m
+[0;32mI (123409) example: Byte 49: 0x00[0m
+[0;32mI (123419) example: Byte 50: 0x00[0m
+[0;32mI (123419) example: Byte 51: 0x00[0m
+[0;32mI (123429) example: Byte 52: 0x00[0m
+[0;32mI (123429) example: Byte 53: 0x00[0m
+[0;32mI (123429) example: Byte 54: 0x00[0m
+[0;32mI (123439) example: Byte 55: 0x00[0m
+[0;32mI (123439) example: Byte 56: 0x00[0m
+[0;32mI (123449) example: Byte 57: 0x00[0m
+[0;32mI (123449) example: Byte 58: 0x00[0m
+[0;32mI (123449) example: Byte 59: 0x00[0m
+[0;32mI (123459) example: Byte 60: 0x00[0m
+[0;32mI (123459) example: Byte 61: 0x00[0m
+[0;32mI (123469) example: Byte 62: 0x00[0m
+[0;32mI (123469) example: Byte 63: 0x00[0m
+[0;32mI (123469) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 00 00 00 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (127579) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (127579) example: Dane (ASCII): @��?[0m
+[0;32mI (127589) example: Dane (surowe):[0m
+[0;32mI (127589) example: Byte 0: 0x40[0m
+[0;32mI (127589) example: Byte 1: 0xA9[0m
+[0;32mI (127599) example: Byte 2: 0xC9[0m
+[0;32mI (127599) example: Byte 3: 0x3F[0m
+[0;32mI (127609) example: Byte 4: 0x00[0m
+[0;32mI (127609) example: Byte 5: 0x00[0m
+[0;32mI (127609) example: Byte 6: 0x00[0m
+[0;32mI (127619) example: Byte 7: 0x00[0m
+[0;32mI (127619) example: Byte 8: 0x00[0m
+[0;32mI (127629) example: Byte 9: 0x00[0m
+[0;32mI (127629) example: Byte 10: 0x00[0m
+[0;32mI (127629) example: Byte 11: 0x00[0m
+[0;32mI (127639) example: Byte 12: 0x00[0m
+[0;32mI (127639) example: Byte 13: 0x00[0m
+[0;32mI (127649) example: Byte 14: 0x00[0m
+[0;32mI (127649) example: Byte 15: 0x00[0m
+[0;32mI (127649) example: Byte 16: 0x00[0m
+[0;32mI (127659) example: Byte 17: 0x00[0m
+[0;32mI (127659) example: Byte 18: 0x00[0m
+[0;32mI (127669) example: Byte 19: 0x00[0m
+[0;32mI (127669) example: Byte 20: 0x28[0m
+[0;32mI (127669) example: Byte 21: 0x91[0m
+[0;32mI (127679) example: Byte 22: 0x00[0m
+[0;32mI (127679) example: Byte 23: 0x42[0m
+[0;32mI (127689) example: Byte 24: 0x00[0m
+[0;32mI (127689) example: Byte 25: 0x00[0m
+[0;32mI (127689) example: Byte 26: 0x00[0m
+[0;32mI (127699) example: Byte 27: 0x00[0m
+[0;32mI (127699) example: Byte 28: 0x00[0m
+[0;32mI (127709) example: Byte 29: 0x00[0m
+[0;32mI (127709) example: Byte 30: 0x00[0m
+[0;32mI (127709) example: Byte 31: 0x00[0m
+[0;32mI (127719) example: Byte 32: 0x00[0m
+[0;32mI (127719) example: Byte 33: 0x00[0m
+[0;32mI (127729) example: Byte 34: 0x00[0m
+[0;32mI (127729) example: Byte 35: 0x00[0m
+[0;32mI (127729) example: Byte 36: 0x00[0m
+[0;32mI (127739) example: Byte 37: 0x00[0m
+[0;32mI (127739) example: Byte 38: 0x00[0m
+[0;32mI (127749) example: Byte 39: 0x00[0m
+[0;32mI (127749) example: Byte 40: 0x00[0m
+[0;32mI (127749) example: Byte 41: 0x00[0m
+[0;32mI (127759) example: Byte 42: 0x00[0m
+[0;32mI (127759) example: Byte 43: 0x00[0m
+[0;32mI (127769) example: Byte 44: 0x00[0m
+[0;32mI (127769) example: Byte 45: 0x00[0m
+[0;32mI (127769) example: Byte 46: 0x00[0m
+[0;32mI (127779) example: Byte 47: 0x00[0m
+[0;32mI (127779) example: Byte 48: 0x00[0m
+[0;32mI (127789) example: Byte 49: 0x00[0m
+[0;32mI (127789) example: Byte 50: 0x00[0m
+[0;32mI (127789) example: Byte 51: 0x00[0m
+[0;32mI (127799) example: Byte 52: 0x00[0m
+[0;32mI (127799) example: Byte 53: 0x00[0m
+[0;32mI (127809) example: Byte 54: 0x00[0m
+[0;32mI (127809) example: Byte 55: 0x00[0m
+[0;32mI (127809) example: Byte 56: 0x00[0m
+[0;32mI (127819) example: Byte 57: 0x00[0m
+[0;32mI (127819) example: Byte 58: 0x00[0m
+[0;32mI (127829) example: Byte 59: 0x00[0m
+[0;32mI (127829) example: Byte 60: 0x00[0m
+[0;32mI (127829) example: Byte 61: 0x00[0m
+[0;32mI (127839) example: Byte 62: 0x00[0m
+[0;32mI (127839) example: Byte 63: 0x00[0m
+[0;32mI (127839) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 06 06 06 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (127869) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (127869) example: Dane (ASCII): @��?[0m
+[0;32mI (127879) example: Dane (surowe):[0m
+[0;32mI (127879) example: Byte 0: 0x40[0m
+[0;32mI (127879) example: Byte 1: 0xA9[0m
+[0;32mI (127889) example: Byte 2: 0xC9[0m
+[0;32mI (127889) example: Byte 3: 0x3F[0m
+[0;32mI (127899) example: Byte 4: 0x00[0m
+[0;32mI (127899) example: Byte 5: 0x00[0m
+[0;32mI (127899) example: Byte 6: 0x00[0m
+[0;32mI (127909) example: Byte 7: 0x00[0m
+[0;32mI (127909) example: Byte 8: 0x00[0m
+[0;32mI (127919) example: Byte 9: 0x00[0m
+[0;32mI (127919) example: Byte 10: 0x00[0m
+[0;32mI (127919) example: Byte 11: 0x00[0m
+[0;32mI (127929) example: Byte 12: 0x00[0m
+[0;32mI (127929) example: Byte 13: 0x00[0m
+[0;32mI (127939) example: Byte 14: 0x00[0m
+[0;32mI (127939) example: Byte 15: 0x00[0m
+[0;32mI (127939) example: Byte 16: 0x00[0m
+[0;32mI (127949) example: Byte 17: 0x00[0m
+[0;32mI (127949) example: Byte 18: 0x00[0m
+[0;32mI (127959) example: Byte 19: 0x00[0m
+[0;32mI (127959) example: Byte 20: 0x28[0m
+[0;32mI (127959) example: Byte 21: 0x91[0m
+[0;32mI (127969) example: Byte 22: 0x00[0m
+[0;32mI (127969) example: Byte 23: 0x42[0m
+[0;32mI (127979) example: Byte 24: 0x00[0m
+[0;32mI (127979) example: Byte 25: 0x00[0m
+[0;32mI (127979) example: Byte 26: 0x00[0m
+[0;32mI (127989) example: Byte 27: 0x00[0m
+[0;32mI (127989) example: Byte 28: 0x00[0m
+[0;32mI (127999) example: Byte 29: 0x00[0m
+[0;32mI (127999) example: Byte 30: 0x00[0m
+[0;32mI (127999) example: Byte 31: 0x00[0m
+[0;32mI (128009) example: Byte 32: 0x00[0m
+[0;32mI (128009) example: Byte 33: 0x00[0m
+[0;32mI (128019) example: Byte 34: 0x00[0m
+[0;32mI (128019) example: Byte 35: 0x00[0m
+[0;32mI (128019) example: Byte 36: 0x00[0m
+[0;32mI (128029) example: Byte 37: 0x00[0m
+[0;32mI (128029) example: Byte 38: 0x00[0m
+[0;32mI (128039) example: Byte 39: 0x00[0m
+[0;32mI (128039) example: Byte 40: 0x00[0m
+[0;32mI (128039) example: Byte 41: 0x00[0m
+[0;32mI (128049) example: Byte 42: 0x00[0m
+[0;32mI (128049) example: Byte 43: 0x00[0m
+[0;32mI (128059) example: Byte 44: 0x00[0m
+[0;32mI (128059) example: Byte 45: 0x00[0m
+[0;32mI (128059) example: Byte 46: 0x00[0m
+[0;32mI (128069) example: Byte 47: 0x00[0m
+[0;32mI (128069) example: Byte 48: 0x00[0m
+[0;32mI (128079) example: Byte 49: 0x00[0m
+[0;32mI (128079) example: Byte 50: 0x00[0m
+[0;32mI (128079) example: Byte 51: 0x00[0m
+[0;32mI (128089) example: Byte 52: 0x00[0m
+[0;32mI (128089) example: Byte 53: 0x00[0m
+[0;32mI (128099) example: Byte 54: 0x00[0m
+[0;32mI (128099) example: Byte 55: 0x00[0m
+[0;32mI (128099) example: Byte 56: 0x00[0m
+[0;32mI (128109) example: Byte 57: 0x00[0m
+[0;32mI (128109) example: Byte 58: 0x00[0m
+[0;32mI (128119) example: Byte 59: 0x00[0m
+[0;32mI (128119) example: Byte 60: 0x00[0m
+[0;32mI (128119) example: Byte 61: 0x00[0m
+[0;32mI (128129) example: Byte 62: 0x00[0m
+[0;32mI (128129) example: Byte 63: 0x00[0m
+[0;32mI (128129) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 06 06 06 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (128279) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (128279) example: Dane (ASCII): @��?[0m
+[0;32mI (128279) example: Dane (surowe):[0m
+[0;32mI (128289) example: Byte 0: 0x40[0m
+[0;32mI (128289) example: Byte 1: 0xA9[0m
+[0;32mI (128299) example: Byte 2: 0xC9[0m
+[0;32mI (128299) example: Byte 3: 0x3F[0m
+[0;32mI (128299) example: Byte 4: 0x00[0m
+[0;32mI (128309) example: Byte 5: 0x00[0m
+[0;32mI (128309) example: Byte 6: 0x00[0m
+[0;32mI (128309) example: Byte 7: 0x00[0m
+[0;32mI (128319) example: Byte 8: 0x00[0m
+[0;32mI (128319) example: Byte 9: 0x00[0m
+[0;32mI (128329) example: Byte 10: 0x00[0m
+[0;32mI (128329) example: Byte 11: 0x00[0m
+[0;32mI (128329) example: Byte 12: 0x00[0m
+[0;32mI (128339) example: Byte 13: 0x00[0m
+[0;32mI (128339) example: Byte 14: 0x00[0m
+[0;32mI (128349) example: Byte 15: 0x00[0m
+[0;32mI (128349) example: Byte 16: 0x00[0m
+[0;32mI (128349) example: Byte 17: 0x00[0m
+[0;32mI (128359) example: Byte 18: 0x00[0m
+[0;32mI (128359) example: Byte 19: 0x00[0m
+[0;32mI (128369) example: Byte 20: 0x28[0m
+[0;32mI (128369) example: Byte 21: 0x91[0m
+[0;32mI (128369) example: Byte 22: 0x00[0m
+[0;32mI (128379) example: Byte 23: 0x42[0m
+[0;32mI (128379) example: Byte 24: 0x00[0m
+[0;32mI (128389) example: Byte 25: 0x00[0m
+[0;32mI (128389) example: Byte 26: 0x00[0m
+[0;32mI (128389) example: Byte 27: 0x00[0m
+[0;32mI (128399) example: Byte 28: 0x00[0m
+[0;32mI (128399) example: Byte 29: 0x00[0m
+[0;32mI (128409) example: Byte 30: 0x00[0m
+[0;32mI (128409) example: Byte 31: 0x00[0m
+[0;32mI (128409) example: Byte 32: 0x00[0m
+[0;32mI (128419) example: Byte 33: 0x00[0m
+[0;32mI (128419) example: Byte 34: 0x00[0m
+[0;32mI (128429) example: Byte 35: 0x00[0m
+[0;32mI (128429) example: Byte 36: 0x00[0m
+[0;32mI (128429) example: Byte 37: 0x00[0m
+[0;32mI (128439) example: Byte 38: 0x00[0m
+[0;32mI (128439) example: Byte 39: 0x00[0m
+[0;32mI (128449) example: Byte 40: 0x00[0m
+[0;32mI (128449) example: Byte 41: 0x00[0m
+[0;32mI (128449) example: Byte 42: 0x00[0m
+[0;32mI (128459) example: Byte 43: 0x00[0m
+[0;32mI (128459) example: Byte 44: 0x00[0m
+[0;32mI (128469) example: Byte 45: 0x00[0m
+[0;32mI (128469) example: Byte 46: 0x00[0m
+[0;32mI (128469) example: Byte 47: 0x00[0m
+[0;32mI (128479) example: Byte 48: 0x00[0m
+[0;32mI (128479) example: Byte 49: 0x00[0m
+[0;32mI (128489) example: Byte 50: 0x00[0m
+[0;32mI (128489) example: Byte 51: 0x00[0m
+[0;32mI (128489) example: Byte 52: 0x00[0m
+[0;32mI (128499) example: Byte 53: 0x00[0m
+[0;32mI (128499) example: Byte 54: 0x00[0m
+[0;32mI (128509) example: Byte 55: 0x00[0m
+[0;32mI (128509) example: Byte 56: 0x00[0m
+[0;32mI (128509) example: Byte 57: 0x00[0m
+[0;32mI (128519) example: Byte 58: 0x00[0m
+[0;32mI (128519) example: Byte 59: 0x00[0m
+[0;32mI (128529) example: Byte 60: 0x00[0m
+[0;32mI (128529) example: Byte 61: 0x00[0m
+[0;32mI (128529) example: Byte 62: 0x00[0m
+[0;32mI (128539) example: Byte 63: 0x00[0m
+[0;32mI (128539) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 06 06 06 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (128559) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (128569) example: Dane (ASCII): @��?[0m
+[0;32mI (128569) example: Dane (surowe):[0m
+[0;32mI (128579) example: Byte 0: 0x40[0m
+[0;32mI (128579) example: Byte 1: 0xA9[0m
+[0;32mI (128589) example: Byte 2: 0xC9[0m
+[0;32mI (128589) example: Byte 3: 0x3F[0m
+[0;32mI (128589) example: Byte 4: 0x00[0m
+[0;32mI (128599) example: Byte 5: 0x00[0m
+[0;32mI (128599) example: Byte 6: 0x00[0m
+[0;32mI (128599) example: Byte 7: 0x00[0m
+[0;32mI (128609) example: Byte 8: 0x00[0m
+[0;32mI (128609) example: Byte 9: 0x00[0m
+[0;32mI (128619) example: Byte 10: 0x00[0m
+[0;32mI (128619) example: Byte 11: 0x00[0m
+[0;32mI (128619) example: Byte 12: 0x00[0m
+[0;32mI (128629) example: Byte 13: 0x00[0m
+[0;32mI (128629) example: Byte 14: 0x00[0m
+[0;32mI (128639) example: Byte 15: 0x00[0m
+[0;32mI (128639) example: Byte 16: 0x00[0m
+[0;32mI (128639) example: Byte 17: 0x00[0m
+[0;32mI (128649) example: Byte 18: 0x00[0m
+[0;32mI (128649) example: Byte 19: 0x00[0m
+[0;32mI (128659) example: Byte 20: 0x28[0m
+[0;32mI (128659) example: Byte 21: 0x91[0m
+[0;32mI (128659) example: Byte 22: 0x00[0m
+[0;32mI (128669) example: Byte 23: 0x42[0m
+[0;32mI (128669) example: Byte 24: 0x00[0m
+[0;32mI (128679) example: Byte 25: 0x00[0m
+[0;32mI (128679) example: Byte 26: 0x00[0m
+[0;32mI (128679) example: Byte 27: 0x00[0m
+[0;32mI (128689) example: Byte 28: 0x00[0m
+[0;32mI (128689) example: Byte 29: 0x00[0m
+[0;32mI (128699) example: Byte 30: 0x00[0m
+[0;32mI (128699) example: Byte 31: 0x00[0m
+[0;32mI (128699) example: Byte 32: 0x00[0m
+[0;32mI (128709) example: Byte 33: 0x00[0m
+[0;32mI (128709) example: Byte 34: 0x00[0m
+[0;32mI (128719) example: Byte 35: 0x00[0m
+[0;32mI (128719) example: Byte 36: 0x00[0m
+[0;32mI (128719) example: Byte 37: 0x00[0m
+[0;32mI (128729) example: Byte 38: 0x00[0m
+[0;32mI (128729) example: Byte 39: 0x00[0m
+[0;32mI (128739) example: Byte 40: 0x00[0m
+[0;32mI (128739) example: Byte 41: 0x00[0m
+[0;32mI (128739) example: Byte 42: 0x00[0m
+[0;32mI (128749) example: Byte 43: 0x00[0m
+[0;32mI (128749) example: Byte 44: 0x00[0m
+[0;32mI (128759) example: Byte 45: 0x00[0m
+[0;32mI (128759) example: Byte 46: 0x00[0m
+[0;32mI (128759) example: Byte 47: 0x00[0m
+[0;32mI (128769) example: Byte 48: 0x00[0m
+[0;32mI (128769) example: Byte 49: 0x00[0m
+[0;32mI (128779) example: Byte 50: 0x00[0m
+[0;32mI (128779) example: Byte 51: 0x00[0m
+[0;32mI (128779) example: Byte 52: 0x00[0m
+[0;32mI (128789) example: Byte 53: 0x00[0m
+[0;32mI (128789) example: Byte 54: 0x00[0m
+[0;32mI (128799) example: Byte 55: 0x00[0m
+[0;32mI (128799) example: Byte 56: 0x00[0m
+[0;32mI (128799) example: Byte 57: 0x00[0m
+[0;32mI (128809) example: Byte 58: 0x00[0m
+[0;32mI (128809) example: Byte 59: 0x00[0m
+[0;32mI (128819) example: Byte 60: 0x00[0m
+[0;32mI (128819) example: Byte 61: 0x00[0m
+[0;32mI (128819) example: Byte 62: 0x00[0m
+[0;32mI (128829) example: Byte 63: 0x00[0m
+[0;32mI (128829) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 08 08 08 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (139259) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (139259) example: Dane (ASCII): @��?[0m
+[0;32mI (139269) example: Dane (surowe):[0m
+[0;32mI (139269) example: Byte 0: 0x40[0m
+[0;32mI (139279) example: Byte 1: 0xA9[0m
+[0;32mI (139279) example: Byte 2: 0xC9[0m
+[0;32mI (139279) example: Byte 3: 0x3F[0m
+[0;32mI (139289) example: Byte 4: 0x00[0m
+[0;32mI (139289) example: Byte 5: 0x00[0m
+[0;32mI (139299) example: Byte 6: 0x00[0m
+[0;32mI (139299) example: Byte 7: 0x00[0m
+[0;32mI (139299) example: Byte 8: 0x00[0m
+[0;32mI (139309) example: Byte 9: 0x00[0m
+[0;32mI (139309) example: Byte 10: 0x00[0m
+[0;32mI (139319) example: Byte 11: 0x00[0m
+[0;32mI (139319) example: Byte 12: 0x00[0m
+[0;32mI (139319) example: Byte 13: 0x00[0m
+[0;32mI (139329) example: Byte 14: 0x00[0m
+[0;32mI (139329) example: Byte 15: 0x00[0m
+[0;32mI (139339) example: Byte 16: 0x00[0m
+[0;32mI (139339) example: Byte 17: 0x00[0m
+[0;32mI (139339) example: Byte 18: 0x00[0m
+[0;32mI (139349) example: Byte 19: 0x00[0m
+[0;32mI (139349) example: Byte 20: 0x28[0m
+[0;32mI (139359) example: Byte 21: 0x91[0m
+[0;32mI (139359) example: Byte 22: 0x00[0m
+[0;32mI (139359) example: Byte 23: 0x42[0m
+[0;32mI (139369) example: Byte 24: 0x00[0m
+[0;32mI (139369) example: Byte 25: 0x00[0m
+[0;32mI (139379) example: Byte 26: 0x00[0m
+[0;32mI (139379) example: Byte 27: 0x00[0m
+[0;32mI (139379) example: Byte 28: 0x00[0m
+[0;32mI (139389) example: Byte 29: 0x00[0m
+[0;32mI (139389) example: Byte 30: 0x00[0m
+[0;32mI (139399) example: Byte 31: 0x00[0m
+[0;32mI (139399) example: Byte 32: 0x00[0m
+[0;32mI (139399) example: Byte 33: 0x00[0m
+[0;32mI (139409) example: Byte 34: 0x00[0m
+[0;32mI (139409) example: Byte 35: 0x00[0m
+[0;32mI (139419) example: Byte 36: 0x00[0m
+[0;32mI (139419) example: Byte 37: 0x00[0m
+[0;32mI (139419) example: Byte 38: 0x00[0m
+[0;32mI (139429) example: Byte 39: 0x00[0m
+[0;32mI (139429) example: Byte 40: 0x00[0m
+[0;32mI (139439) example: Byte 41: 0x00[0m
+[0;32mI (139439) example: Byte 42: 0x00[0m
+[0;32mI (139439) example: Byte 43: 0x00[0m
+[0;32mI (139449) example: Byte 44: 0x00[0m
+[0;32mI (139449) example: Byte 45: 0x00[0m
+[0;32mI (139459) example: Byte 46: 0x00[0m
+[0;32mI (139459) example: Byte 47: 0x00[0m
+[0;32mI (139459) example: Byte 48: 0x00[0m
+[0;32mI (139469) example: Byte 49: 0x00[0m
+[0;32mI (139469) example: Byte 50: 0x00[0m
+[0;32mI (139479) example: Byte 51: 0x00[0m
+[0;32mI (139479) example: Byte 52: 0x00[0m
+[0;32mI (139479) example: Byte 53: 0x00[0m
+[0;32mI (139489) example: Byte 54: 0x00[0m
+[0;32mI (139489) example: Byte 55: 0x00[0m
+[0;32mI (139499) example: Byte 56: 0x00[0m
+[0;32mI (139499) example: Byte 57: 0x00[0m
+[0;32mI (139499) example: Byte 58: 0x00[0m
+[0;32mI (139509) example: Byte 59: 0x00[0m
+[0;32mI (139509) example: Byte 60: 0x00[0m
+[0;32mI (139519) example: Byte 61: 0x00[0m
+[0;32mI (139519) example: Byte 62: 0x00[0m
+[0;32mI (139519) example: Byte 63: 0x00[0m
+[0;32mI (139529) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 08 08 08 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (139549) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (139549) example: Dane (ASCII): @��?[0m
+[0;32mI (139559) example: Dane (surowe):[0m
+[0;32mI (139559) example: Byte 0: 0x40[0m
+[0;32mI (139569) example: Byte 1: 0xA9[0m
+[0;32mI (139569) example: Byte 2: 0xC9[0m
+[0;32mI (139569) example: Byte 3: 0x3F[0m
+[0;32mI (139579) example: Byte 4: 0x00[0m
+[0;32mI (139579) example: Byte 5: 0x00[0m
+[0;32mI (139589) example: Byte 6: 0x00[0m
+[0;32mI (139589) example: Byte 7: 0x00[0m
+[0;32mI (139589) example: Byte 8: 0x00[0m
+[0;32mI (139599) example: Byte 9: 0x00[0m
+[0;32mI (139599) example: Byte 10: 0x00[0m
+[0;32mI (139609) example: Byte 11: 0x00[0m
+[0;32mI (139609) example: Byte 12: 0x00[0m
+[0;32mI (139609) example: Byte 13: 0x00[0m
+[0;32mI (139619) example: Byte 14: 0x00[0m
+[0;32mI (139619) example: Byte 15: 0x00[0m
+[0;32mI (139629) example: Byte 16: 0x00[0m
+[0;32mI (139629) example: Byte 17: 0x00[0m
+[0;32mI (139629) example: Byte 18: 0x00[0m
+[0;32mI (139639) example: Byte 19: 0x00[0m
+[0;32mI (139639) example: Byte 20: 0x28[0m
+[0;32mI (139649) example: Byte 21: 0x91[0m
+[0;32mI (139649) example: Byte 22: 0x00[0m
+[0;32mI (139649) example: Byte 23: 0x42[0m
+[0;32mI (139659) example: Byte 24: 0x00[0m
+[0;32mI (139659) example: Byte 25: 0x00[0m
+[0;32mI (139669) example: Byte 26: 0x00[0m
+[0;32mI (139669) example: Byte 27: 0x00[0m
+[0;32mI (139669) example: Byte 28: 0x00[0m
+[0;32mI (139679) example: Byte 29: 0x00[0m
+[0;32mI (139679) example: Byte 30: 0x00[0m
+[0;32mI (139689) example: Byte 31: 0x00[0m
+[0;32mI (139689) example: Byte 32: 0x00[0m
+[0;32mI (139689) example: Byte 33: 0x00[0m
+[0;32mI (139699) example: Byte 34: 0x00[0m
+[0;32mI (139699) example: Byte 35: 0x00[0m
+[0;32mI (139709) example: Byte 36: 0x00[0m
+[0;32mI (139709) example: Byte 37: 0x00[0m
+[0;32mI (139709) example: Byte 38: 0x00[0m
+[0;32mI (139719) example: Byte 39: 0x00[0m
+[0;32mI (139719) example: Byte 40: 0x00[0m
+[0;32mI (139729) example: Byte 41: 0x00[0m
+[0;32mI (139729) example: Byte 42: 0x00[0m
+[0;32mI (139729) example: Byte 43: 0x00[0m
+[0;32mI (139739) example: Byte 44: 0x00[0m
+[0;32mI (139739) example: Byte 45: 0x00[0m
+[0;32mI (139749) example: Byte 46: 0x00[0m
+[0;32mI (139749) example: Byte 47: 0x00[0m
+[0;32mI (139749) example: Byte 48: 0x00[0m
+[0;32mI (139759) example: Byte 49: 0x00[0m
+[0;32mI (139759) example: Byte 50: 0x00[0m
+[0;32mI (139769) example: Byte 51: 0x00[0m
+[0;32mI (139769) example: Byte 52: 0x00[0m
+[0;32mI (139769) example: Byte 53: 0x00[0m
+[0;32mI (139779) example: Byte 54: 0x00[0m
+[0;32mI (139779) example: Byte 55: 0x00[0m
+[0;32mI (139789) example: Byte 56: 0x00[0m
+[0;32mI (139789) example: Byte 57: 0x00[0m
+[0;32mI (139789) example: Byte 58: 0x00[0m
+[0;32mI (139799) example: Byte 59: 0x00[0m
+[0;32mI (139799) example: Byte 60: 0x00[0m
+[0;32mI (139809) example: Byte 61: 0x00[0m
+[0;32mI (139809) example: Byte 62: 0x00[0m
+[0;32mI (139809) example: Byte 63: 0x00[0m
+[0;32mI (139819) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0A 0A 0A 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (140629) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (140629) example: Dane (ASCII): @��?[0m
+[0;32mI (140639) example: Dane (surowe):[0m
+[0;32mI (140639) example: Byte 0: 0x40[0m
+[0;32mI (140639) example: Byte 1: 0xA9[0m
+[0;32mI (140649) example: Byte 2: 0xC9[0m
+[0;32mI (140649) example: Byte 3: 0x3F[0m
+[0;32mI (140659) example: Byte 4: 0x00[0m
+[0;32mI (140659) example: Byte 5: 0x00[0m
+[0;32mI (140659) example: Byte 6: 0x00[0m
+[0;32mI (140669) example: Byte 7: 0x00[0m
+[0;32mI (140669) example: Byte 8: 0x00[0m
+[0;32mI (140679) example: Byte 9: 0x00[0m
+[0;32mI (140679) example: Byte 10: 0x00[0m
+[0;32mI (140679) example: Byte 11: 0x00[0m
+[0;32mI (140689) example: Byte 12: 0x00[0m
+[0;32mI (140689) example: Byte 13: 0x00[0m
+[0;32mI (140699) example: Byte 14: 0x00[0m
+[0;32mI (140699) example: Byte 15: 0x00[0m
+[0;32mI (140699) example: Byte 16: 0x00[0m
+[0;32mI (140709) example: Byte 17: 0x00[0m
+[0;32mI (140709) example: Byte 18: 0x00[0m
+[0;32mI (140719) example: Byte 19: 0x00[0m
+[0;32mI (140719) example: Byte 20: 0x28[0m
+[0;32mI (140719) example: Byte 21: 0x91[0m
+[0;32mI (140729) example: Byte 22: 0x00[0m
+[0;32mI (140729) example: Byte 23: 0x42[0m
+[0;32mI (140739) example: Byte 24: 0x00[0m
+[0;32mI (140739) example: Byte 25: 0x00[0m
+[0;32mI (140739) example: Byte 26: 0x00[0m
+[0;32mI (140749) example: Byte 27: 0x00[0m
+[0;32mI (140749) example: Byte 28: 0x00[0m
+[0;32mI (140759) example: Byte 29: 0x00[0m
+[0;32mI (140759) example: Byte 30: 0x00[0m
+[0;32mI (140759) example: Byte 31: 0x00[0m
+[0;32mI (140769) example: Byte 32: 0x00[0m
+[0;32mI (140769) example: Byte 33: 0x00[0m
+[0;32mI (140779) example: Byte 34: 0x00[0m
+[0;32mI (140779) example: Byte 35: 0x00[0m
+[0;32mI (140779) example: Byte 36: 0x00[0m
+[0;32mI (140789) example: Byte 37: 0x00[0m
+[0;32mI (140789) example: Byte 38: 0x00[0m
+[0;32mI (140799) example: Byte 39: 0x00[0m
+[0;32mI (140799) example: Byte 40: 0x00[0m
+[0;32mI (140799) example: Byte 41: 0x00[0m
+[0;32mI (140809) example: Byte 42: 0x00[0m
+[0;32mI (140809) example: Byte 43: 0x00[0m
+[0;32mI (140819) example: Byte 44: 0x00[0m
+[0;32mI (140819) example: Byte 45: 0x00[0m
+[0;32mI (140819) example: Byte 46: 0x00[0m
+[0;32mI (140829) example: Byte 47: 0x00[0m
+[0;32mI (140829) example: Byte 48: 0x00[0m
+[0;32mI (140839) example: Byte 49: 0x00[0m
+[0;32mI (140839) example: Byte 50: 0x00[0m
+[0;32mI (140839) example: Byte 51: 0x00[0m
+[0;32mI (140849) example: Byte 52: 0x00[0m
+[0;32mI (140849) example: Byte 53: 0x00[0m
+[0;32mI (140859) example: Byte 54: 0x00[0m
+[0;32mI (140859) example: Byte 55: 0x00[0m
+[0;32mI (140859) example: Byte 56: 0x00[0m
+[0;32mI (140869) example: Byte 57: 0x00[0m
+[0;32mI (140869) example: Byte 58: 0x00[0m
+[0;32mI (140879) example: Byte 59: 0x00[0m
+[0;32mI (140879) example: Byte 60: 0x00[0m
+[0;32mI (140879) example: Byte 61: 0x00[0m
+[0;32mI (140889) example: Byte 62: 0x00[0m
+[0;32mI (140889) example: Byte 63: 0x00[0m
+[0;32mI (140899) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0C 0C 0C 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (140919) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (140919) example: Dane (ASCII): @��?[0m
+[0;32mI (140929) example: Dane (surowe):[0m
+[0;32mI (140929) example: Byte 0: 0x40[0m
+[0;32mI (140929) example: Byte 1: 0xA9[0m
+[0;32mI (140939) example: Byte 2: 0xC9[0m
+[0;32mI (140939) example: Byte 3: 0x3F[0m
+[0;32mI (140949) example: Byte 4: 0x00[0m
+[0;32mI (140949) example: Byte 5: 0x00[0m
+[0;32mI (140949) example: Byte 6: 0x00[0m
+[0;32mI (140959) example: Byte 7: 0x00[0m
+[0;32mI (140959) example: Byte 8: 0x00[0m
+[0;32mI (140969) example: Byte 9: 0x00[0m
+[0;32mI (140969) example: Byte 10: 0x00[0m
+[0;32mI (140969) example: Byte 11: 0x00[0m
+[0;32mI (140979) example: Byte 12: 0x00[0m
+[0;32mI (140979) example: Byte 13: 0x00[0m
+[0;32mI (140989) example: Byte 14: 0x00[0m
+[0;32mI (140989) example: Byte 15: 0x00[0m
+[0;32mI (140989) example: Byte 16: 0x00[0m
+[0;32mI (140999) example: Byte 17: 0x00[0m
+[0;32mI (140999) example: Byte 18: 0x00[0m
+[0;32mI (141009) example: Byte 19: 0x00[0m
+[0;32mI (141009) example: Byte 20: 0x28[0m
+[0;32mI (141009) example: Byte 21: 0x91[0m
+[0;32mI (141019) example: Byte 22: 0x00[0m
+[0;32mI (141019) example: Byte 23: 0x42[0m
+[0;32mI (141029) example: Byte 24: 0x00[0m
+[0;32mI (141029) example: Byte 25: 0x00[0m
+[0;32mI (141029) example: Byte 26: 0x00[0m
+[0;32mI (141039) example: Byte 27: 0x00[0m
+[0;32mI (141039) example: Byte 28: 0x00[0m
+[0;32mI (141049) example: Byte 29: 0x00[0m
+[0;32mI (141049) example: Byte 30: 0x00[0m
+[0;32mI (141049) example: Byte 31: 0x00[0m
+[0;32mI (141059) example: Byte 32: 0x00[0m
+[0;32mI (141059) example: Byte 33: 0x00[0m
+[0;32mI (141069) example: Byte 34: 0x00[0m
+[0;32mI (141069) example: Byte 35: 0x00[0m
+[0;32mI (141069) example: Byte 36: 0x00[0m
+[0;32mI (141079) example: Byte 37: 0x00[0m
+[0;32mI (141079) example: Byte 38: 0x00[0m
+[0;32mI (141089) example: Byte 39: 0x00[0m
+[0;32mI (141089) example: Byte 40: 0x00[0m
+[0;32mI (141089) example: Byte 41: 0x00[0m
+[0;32mI (141099) example: Byte 42: 0x00[0m
+[0;32mI (141099) example: Byte 43: 0x00[0m
+[0;32mI (141109) example: Byte 44: 0x00[0m
+[0;32mI (141109) example: Byte 45: 0x00[0m
+[0;32mI (141109) example: Byte 46: 0x00[0m
+[0;32mI (141119) example: Byte 47: 0x00[0m
+[0;32mI (141119) example: Byte 48: 0x00[0m
+[0;32mI (141129) example: Byte 49: 0x00[0m
+[0;32mI (141129) example: Byte 50: 0x00[0m
+[0;32mI (141129) example: Byte 51: 0x00[0m
+[0;32mI (141139) example: Byte 52: 0x00[0m
+[0;32mI (141139) example: Byte 53: 0x00[0m
+[0;32mI (141149) example: Byte 54: 0x00[0m
+[0;32mI (141149) example: Byte 55: 0x00[0m
+[0;32mI (141149) example: Byte 56: 0x00[0m
+[0;32mI (141159) example: Byte 57: 0x00[0m
+[0;32mI (141159) example: Byte 58: 0x00[0m
+[0;32mI (141169) example: Byte 59: 0x00[0m
+[0;32mI (141169) example: Byte 60: 0x00[0m
+[0;32mI (141169) example: Byte 61: 0x00[0m
+[0;32mI (141179) example: Byte 62: 0x00[0m
+[0;32mI (141179) example: Byte 63: 0x00[0m
+[0;32mI (141189) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
+
+USBD Setup Received 41 00 0C 0C 0C 03 00 00 
+Odebrano vendor-specific żądanie
+[0;32mI (141209) example: Odebrano dane od hosta! Rozmiar bufora: 64[0m
+[0;32mI (141209) example: Dane (ASCII): @��?[0m
+[0;32mI (141219) example: Dane (surowe):[0m
+[0;32mI (141219) example: Byte 0: 0x40[0m
+[0;32mI (141219) example: Byte 1: 0xA9[0m
+[0;32mI (141229) example: Byte 2: 0xC9[0m
+[0;32mI (141229) example: Byte 3: 0x3F[0m
+[0;32mI (141239) example: Byte 4: 0x00[0m
+[0;32mI (141239) example: Byte 5: 0x00[0m
+[0;32mI (141239) example: Byte 6: 0x00[0m
+[0;32mI (141249) example: Byte 7: 0x00[0m
+[0;32mI (141249) example: Byte 8: 0x00[0m
+[0;32mI (141259) example: Byte 9: 0x00[0m
+[0;32mI (141259) example: Byte 10: 0x00[0m
+[0;32mI (141259) example: Byte 11: 0x00[0m
+[0;32mI (141269) example: Byte 12: 0x00[0m
+[0;32mI (141269) example: Byte 13: 0x00[0m
+[0;32mI (141279) example: Byte 14: 0x00[0m
+[0;32mI (141279) example: Byte 15: 0x00[0m
+[0;32mI (141279) example: Byte 16: 0x00[0m
+[0;32mI (141289) example: Byte 17: 0x00[0m
+[0;32mI (141289) example: Byte 18: 0x00[0m
+[0;32mI (141299) example: Byte 19: 0x00[0m
+[0;32mI (141299) example: Byte 20: 0x28[0m
+[0;32mI (141299) example: Byte 21: 0x91[0m
+[0;32mI (141309) example: Byte 22: 0x00[0m
+[0;32mI (141309) example: Byte 23: 0x42[0m
+[0;32mI (141319) example: Byte 24: 0x00[0m
+[0;32mI (141319) example: Byte 25: 0x00[0m
+[0;32mI (141319) example: Byte 26: 0x00[0m
+[0;32mI (141329) example: Byte 27: 0x00[0m
+[0;32mI (141329) example: Byte 28: 0x00[0m
+[0;32mI (141339) example: Byte 29: 0x00[0m
+[0;32mI (141339) example: Byte 30: 0x00[0m
+[0;32mI (141339) example: Byte 31: 0x00[0m
+[0;32mI (141349) example: Byte 32: 0x00[0m
+[0;32mI (141349) example: Byte 33: 0x00[0m
+[0;32mI (141359) example: Byte 34: 0x00[0m
+[0;32mI (141359) example: Byte 35: 0x00[0m
+[0;32mI (141359) example: Byte 36: 0x00[0m
+[0;32mI (141369) example: Byte 37: 0x00[0m
+[0;32mI (141369) example: Byte 38: 0x00[0m
+[0;32mI (141379) example: Byte 39: 0x00[0m
+[0;32mI (141379) example: Byte 40: 0x00[0m
+[0;32mI (141379) example: Byte 41: 0x00[0m
+[0;32mI (141389) example: Byte 42: 0x00[0m
+[0;32mI (141389) example: Byte 43: 0x00[0m
+[0;32mI (141399) example: Byte 44: 0x00[0m
+[0;32mI (141399) example: Byte 45: 0x00[0m
+[0;32mI (141399) example: Byte 46: 0x00[0m
+[0;32mI (141409) example: Byte 47: 0x00[0m
+[0;32mI (141409) example: Byte 48: 0x00[0m
+[0;32mI (141419) example: Byte 49: 0x00[0m
+[0;32mI (141419) example: Byte 50: 0x00[0m
+[0;32mI (141419) example: Byte 51: 0x00[0m
+[0;32mI (141429) example: Byte 52: 0x00[0m
+[0;32mI (141429) example: Byte 53: 0x00[0m
+[0;32mI (141439) example: Byte 54: 0x00[0m
+[0;32mI (141439) example: Byte 55: 0x00[0m
+[0;32mI (141439) example: Byte 56: 0x00[0m
+[0;32mI (141449) example: Byte 57: 0x00[0m
+[0;32mI (141449) example: Byte 58: 0x00[0m
+[0;32mI (141459) example: Byte 59: 0x00[0m
+[0;32mI (141459) example: Byte 60: 0x00[0m
+[0;32mI (141459) example: Byte 61: 0x00[0m
+[0;32mI (141469) example: Byte 62: 0x00[0m
+[0;32mI (141469) example: Byte 63: 0x00[0m
+[0;32mI (141479) example: Przetwarzanie danych z OUT, rozmiar: 64[0m
+  Queue EP 80 with 0 bytes ...
+USBD Xfer Complete on EP 80 with 0 bytes
