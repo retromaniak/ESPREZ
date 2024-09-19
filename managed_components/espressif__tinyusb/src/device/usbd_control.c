@@ -148,7 +148,6 @@ void usbd_control_reset(void)
   tu_varclr(&_ctrl_xfer);
 }
 
-
 // Set complete callback
 void usbd_control_set_complete_callback( usbd_control_xfer_cb_t fp )
 {
@@ -225,7 +224,6 @@ bool usbd_control_xfer_cb (uint8_t rhport, uint8_t ep_addr, xfer_result_t result
       // Stall both IN and OUT control endpoint
       dcd_edpt_stall(rhport, EDPT_CTRL_OUT);
       dcd_edpt_stall(rhport, EDPT_CTRL_IN);
-	  TU_LOG2("ENDPOINT ODRZUCONY ");
     }
   }
   else

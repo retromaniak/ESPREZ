@@ -1,5 +1,9 @@
 ## IDF Component Manager Manifest File
 dependencies:
   espressif/esp_tinyusb: "^1.4.4"
-
   idf: "^5.0"
+
+scripts:
+  post_component_build:
+    - mkdir -p "${CMAKE_BINARY_DIR}/managed_components/espressif__tinyusb/src/device"
+    - cp ${CMAKE_SOURCE_DIR}/additional_components/usbd.c ${CMAKE_BINARY_DIR}/managed_components/espressif__tinyusb/src/device/usbd.c

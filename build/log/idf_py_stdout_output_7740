@@ -1,3 +1,0 @@
-[1/10] Building C object esp-idf/espressif__tinyusb/CMakeFiles/__idf_espressif__tinyusb.dir/src/device/usbd.c.obj
-[2/10] Linking C static library esp-idf\espressif__tinyusb\libespressif__tinyusb.a
-[3/10] Performing build step for 'bootloader'

@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Adas/Desktop/tusb_hid/main
+# Install script for directory: C:/Users/Adas/Desktop/ESPREZ/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/tusb_hid")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/ESPREZ")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
