@@ -29,7 +29,7 @@
 | Sprzęt | Hardware |
 |---|---|
 | Urządzenie bazuje na mikrokontrolerze ESP32-S2 ponieważ dostępny jest na chińskich portalach aukcyjnych za ok. 2-3$. Dlaczego do projektu w którym wystarczyłaby moc obliczeniowa ATTiny wykorzystuje tak "Potężny" mikrokontroler? Odpowiedź jest prosta. Ponieważ urządzeniu należy podmienić PID i VID. Czym one są opisane zostanie w cześci omawiającej program. Co ważne to fakt że na podmianę tych wartości pozwalają tylko mikrokontrolery ESP32 serii S. Jako że DevKit S2 jest najtańszy, to go postanowiłem wybrać jako serce projektu. Kolejna sprawa to zasilanie silnika. Prądy podawane przez mikrokontroler są bowiem zbyt małe aby podłączyć silnik bezpośrednio, poza tym sygnały podawane na wyjściu mikrokontrolera to nie napięcie stałe, a sygnał <a href="https://pl.wikipedia.org/wiki/Modulacja_szeroko%C5%9Bci_impuls%C3%B3w">PWM</a>. Dlatego aby nie kombinować z tanzystorami, mostkami H, MOSFETami i innymi czarnymi magiami. Po prostu jak każdy szanujący się elektronik amator, użyje Sterownika PWM przeznaczonego do silników. W projekcie zastosowałem chiński MX1508, ale każdy inny sterownik pracujący na napięciu 5V się nada (np. DRV8833 czy L9110s). Do tego użyje silniczka wibracyjnego. Tu również pełna dowolność, możecie go wyciągnąć z jakiegoś starego urządzenia, zabawki z sex shopu lub też kupić. Zwróćcie tylko uwagę aby był to silnik którego nie zabije napięcie 5V. Sterownik to koszt 1-3$ natomiast silniczek 0-2$. W ten sposób za 4-8$ możecie mieć akcesorium do PS2. | The device is based on ESP32-S2 microcontroller because it is available on Chinese auction sites for about $2-3. Why for a project in which the computing power of ATTiny would be enough uses such a “Powerful” microcontroller? The answer is simple. Because the device needs to be swapped PID and VID. What they are will be described in the part discussing the program. What is important is the fact that only ESP32 S-series microcontrollers allow you to swap these values.As DevKit S2 is the cheapest, I decided to choose it as the heart of the project. Another issue is the power supply to the motor. This is because the currents given by the microcontroller are too small to connect the motor directly, besides, the signals given at the output of the microcontroller are not DC voltage, but a <a href="https://en.wikipedia.org/wiki/Pulse-width_modulation">PWM</a> signal. Therefore, in order not to combine with tanistors, H-bridges, MOSFETs and other black magic. Simply, like any self-respecting amateur electronics engineer, will use a PWM Controller designed for motors. In the project I used a Chinese MX1508, but any other driver operating at 5V will do (such as DRV8833 or L9110s). For this I will use a vibration motor. Here, too, full freedom, you can pull it out of some old device, toy from a sex shop or also buy it. Just make sure that it is a motor which will not be killed by 5V. The controller costs $1-3, while the motor costs $0-2. Thus, for $4-8 you can have an accessory for the PS2. |
-
+Check all supported device's (https://docs.tinyusb.org/en/latest/reference/supported.html)
 <div align="center"><img src="./prototyp.png"/></div>
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Mało reprezentacyjny prototyp urządzenia (ale działa)<br>
@@ -49,88 +49,150 @@
 |---|---|
 | Inspiracją do stworzenia projektu był <a href="https://www.youtube.com/watch?v=e1IYwCGN8qg">materiał arhn.eu</a>. Podziękowania też dla [Elektro Damix](https://www.instagram.com/elektrodmx/) który to dał wiele cennych wskazówek odnośnie zastosowania mikrokontrolera czy sterownika PWM. Dziękuję też <a href="https://github.com/kamiladas">Kadasowi</a> który zdecydował się na podjęcie stworzenia kodu całego programu. Gdyby nie oni, rekreacja tego chyba jednego z najbardziej kontrowersyjnych akcesoriów do gier nie ujrzałaby światła dziennego. Jeszcze raz dziękuję. | The project was inspired by <a href="https://www.youtube.com/watch?v=e1IYwCGN8qg">arhn.eu video</a> (available only in Polish). Thanks also to [Elektro Damix](https://www.instagram.com/elektrodmx/) who gave many valuable tips on the use of the microcontroller or PWM controller. Thanks also to <a href="https://github.com/kamiladas">Kadas</a> who decided to take on the creation of the code of the entire program. Had it not been for them, the recreation of what is probably one of the most controversial gaming accessories would not have seen the light of day. Thanks again. |
 
+### ESP32-S2 HID Device Project with Custom Setup Request Handling
 
-
-
-
-
-
-
-### Wymagania
-1. **Instalacja ESP-IDF**:
-   Aby skonfigurować projekt, należy zainstalować Espressif IoT Development Framework (ESP-IDF), który jest wymagany do zbudowania i wgrania oprogramowania na ESP32-S2. Jeśli nie masz ESP-IDF, wykonaj poniższe kroki:
-
-   ```bash
-   git clone https://github.com/espressif/esp-idf.git
-   cd esp-idf
-   ./install.sh
-   ```
-
-   **Uwaga**: Możesz odwiedzić oficjalny [przewodnik instalacji ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/), aby uzyskać szczegółowe kroki dla swojego systemu operacyjnego.
-
-2. **Klonowanie projektu**:
-   Po zainstalowaniu ESP-IDF, sklonuj repozytorium projektu ESPREZ:
-
-   ```bash
-   git clone https://github.com/retromaniak/ESPREZ.git
-   cd ESPREZ
-   ```
-
-3. **Konfiguracja środowiska ESP-IDF**:
-   Przed przystąpieniem do budowy, skonfiguruj środowisko ESP-IDF, uruchamiając poniższą komendę:
-
-   ```bash
-   source /path/to/esp-idf/export.sh
-   ```
+This project showcases the implementation of a USB HID device on an ESP32-S2 microcontroller using TinyUSB, along with custom handling of USB Setup requests. It includes emulation of a vibration device that receives data from the host and uses it to control vibration strength.
 
 ---
 
-### Instrukcje Budowy i Flashowania
+### Project Overview
 
-#### 1. Ustawienie docelowego urządzenia (target)
-   Projekt oparty jest na mikrokontrolerze ESP32-S2, dlatego należy ustawić odpowiedni target urządzenia:
-
-   ```bash
-   idf.py set-target esp32s2
-   ```
-
-#### 2. Budowanie projektu
-   Po ustawieniu docelowego mikrokontrolera, przejdź do procesu budowy:
-
-   ```bash
-   idf.py build
-   ```
-
-   Komenda ta skompiluje kod źródłowy i utworzy plik binarny, który można wgrać na ESP32-S2.
-
-#### 3. Flashowanie firmware
-   Po zakończonym budowaniu, podłącz ESP32-S2 przez USB i upewnij się, że system wykrywa urządzenie. Następnie wgraj skompilowane firmware na ESP32-S2:
-
-   ```bash
-   idf.py -p /dev/ttyUSB0 flash
-   ```
-
-   **Uwaga**: Zastąp `/dev/ttyUSB0` odpowiednim portem szeregowym wykrytym przez Twój system (np. `COM3` w Windows lub `/dev/ttyS1` w Linux).
-
-#### 4. Monitorowanie (opcjonalnie)
-   Możesz monitorować wyjście z mikrokontrolera, korzystając z komendy `idf.py monitor`:
-
-   ```bash
-   idf.py monitor
-   ```
-
-   Aby zakończyć monitorowanie, naciśnij `Ctrl + ]`.
+The main functionality of this project involves:
+- **USB HID Emulation**: The ESP32-S2 acts as a HID (Human Interface Device) that communicates with a host over USB.
+- **Custom Setup Request Handling**: The device can handle vendor-specific requests from the host, processing them and returning appropriate responses.
+- **Vibration Control**: The device receives data from the host, processes it, and translates it into vibration strength (in percentage) for a motor.
 
 ---
 
-### Wymagania sprzętowe
-1. **Mikrokontroler ESP32-S2
-2. **Sterownik PWM do silników**: Można użyć takich sterowników jak MX1508, DRV8833 lub L9110s.
-3. **Silniczek wibracyjny**: Dowolny mały silnik wibracyjny, który bezpiecznie działa przy napięciu 5V.
+### Code Overview
+
+1. **USB Descriptors**:
+    - The descriptors define the device as a HID and include necessary vendor and product IDs.
+    - The HID report descriptor is defined to handle both IN and OUT data transactions with the host.
+    - Strings describe the device as "ASCII Vib" with manufacturer information as "ASCII CORPORATION".
+
+2. **HID Report Handling**:
+    - The `tud_hid_set_report_cb` function receives data from the host and processes it as control commands.
+    - It extracts two ASCII characters, converts them into a hexadecimal value, and then uses this value to control the vibration strength via `vibration_strange()`.
+    - The `vibration_strange()` function controls the vibration motor's strength based on the received value.
+
+3. **Custom Setup Requests**:
+    - The `tud_control_request_cb` function handles vendor-specific requests (`0x41`) from the host, responding with predefined data.
+    - This data is then returned to the host through a control transfer.
+
+4. **USB Initialization**:
+    - The `app_main` function initializes the TinyUSB driver and configures the ESP32-S2 as a HID device.
+    - It enters an infinite loop waiting for data to be processed.
 
 ---
 
-Dodatkowe informacje oraz pełna dokumentacja projektu dostępna jest w repozytorium: [GitHub ESPREZ](https://github.com/retromaniak/ESPREZ.git).
+### Custom `usbd.c` Modification for Setup Requests
+
+In order to process custom setup requests in the USB device, we modify the `usbd.c` file to handle specific `DCD_EVENT_SETUP_RECEIVED` events. The custom code detects vendor-specific requests (`0x41`) and processes them by converting received data to a hexadecimal string format before sending it back to the host.
+
+#### Modified `case DCD_EVENT_SETUP_RECEIVED`:
+
+```c
+case DCD_EVENT_SETUP_RECEIVED:
+    TU_LOG_PTR(USBD_DBG, &event.setup_received);
+    TU_LOG(USBD_DBG, "\r\n");
+
+    // Mark as connected after receiving the first setup packet
+    _usbd_dev.connected = 1;
+
+    // Clear busy and claimed flags for control endpoints
+    _usbd_dev.ep_status[0][TUSB_DIR_OUT].busy = 0;
+    _usbd_dev.ep_status[0][TUSB_DIR_OUT].claimed = 0;
+    _usbd_dev.ep_status[0][TUSB_DIR_IN].busy = 0;
+    _usbd_dev.ep_status[0][TUSB_DIR_IN].claimed = 0;
+
+    // Handle vendor-specific requests (0x41 indicates vendor-specific)
+    if (event.setup_received.bmRequestType == 0x41) {
+        TU_LOG(USBD_DBG, "Vendor-specific request received\n");
+
+        // Buffer for response data
+        char buffer[128]; 
+
+        // Convert request data to hex format (8 bytes, based on example)
+        snprintf(buffer, sizeof(buffer), 
+                 "%02X %02X %04X %04X %04X", 
+                 event.setup_received.bmRequestType, 
+                 event.setup_received.bRequest, 
+                 event.setup_received.wValue, 
+                 event.setup_received.wIndex, 
+                 event.setup_received.wLength);
+
+        // Log the buffer content
+        TU_LOG(USBD_DBG, "Buffer content: %s", buffer);
+
+        // Send buffer as response to the host
+        tud_control_xfer(event.rhport, &event.setup_received, buffer, strlen(buffer));
+
+        // Call `tud_hid_set_report_cb` to process data
+        tud_hid_set_report_cb(0, event.setup_received.bRequest, HID_REPORT_TYPE_OUTPUT, (uint8_t*)buffer, strlen(buffer));
+
+        break;
+    }
+
+    // Stall the endpoint if request can't be processed
+    if (!process_control_request(event.rhport, &event.setup_received)) {
+        dcd_edpt_stall(event.rhport, 0);
+        dcd_edpt_stall(event.rhport, 0 | TUSB_DIR_IN_MASK);
+    }
+    break;
+```
+
+This modification allows handling vendor-specific setup requests and responding appropriately to the host. It also enables sending processed data (converted to a hex string) back to the host.
 
 ---
 
+### How to Build and Flash
+
+1. **Install ESP-IDF**:
+    - Clone the ESP-IDF repository and follow the installation instructions provided in the [official ESP-IDF documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).
+
+    ```bash
+    git clone https://github.com/espressif/esp-idf.git
+    cd esp-idf
+    ./install.sh
+    ```
+
+2. **Clone the Project Repository**:
+    - Clone this repository to your local machine:
+
+    ```bash
+    git clone https://github.com/yourusername/esp32-hid-device.git
+    cd esp32-hid-device
+    ```
+
+3. **Configure the Target Device**:
+    - Set the target device to ESP32-S2:
+
+    ```bash
+    idf.py set-target esp32s2
+    ```
+
+4. **Build the Project**:
+    - Run the following command to build the project:
+
+    ```bash
+    idf.py build
+    ```
+
+5. **Flash the Firmware**:
+    - After building, connect the ESP32-S2 to your machine and flash the firmware:
+
+    ```bash
+    idf.py -p /dev/ttyUSB0 flash
+    ```
+
+6. **Monitor the Output** (optional):
+    - To monitor the device output, use:
+
+    ```bash
+    idf.py monitor
+    ```
+
+---
+
+For more details, please visit the repository and documentation at [GitHub Repository](https://docs.tinyusb.org/en/latest/reference/index.html).
