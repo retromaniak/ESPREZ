@@ -48,3 +48,89 @@
 | Posłowie | Afterword |
 |---|---|
 | Inspiracją do stworzenia projektu był <a href="https://www.youtube.com/watch?v=e1IYwCGN8qg">materiał arhn.eu</a>. Podziękowania też dla [Elektro Damix](https://www.instagram.com/elektrodmx/) który to dał wiele cennych wskazówek odnośnie zastosowania mikrokontrolera czy sterownika PWM. Dziękuję też <a href="https://github.com/kamiladas">Kadasowi</a> który zdecydował się na podjęcie stworzenia kodu całego programu. Gdyby nie oni, rekreacja tego chyba jednego z najbardziej kontrowersyjnych akcesoriów do gier nie ujrzałaby światła dziennego. Jeszcze raz dziękuję. | The project was inspired by <a href="https://www.youtube.com/watch?v=e1IYwCGN8qg">arhn.eu video</a> (available only in Polish). Thanks also to [Elektro Damix](https://www.instagram.com/elektrodmx/) who gave many valuable tips on the use of the microcontroller or PWM controller. Thanks also to <a href="https://github.com/kamiladas">Kadas</a> who decided to take on the creation of the code of the entire program. Had it not been for them, the recreation of what is probably one of the most controversial gaming accessories would not have seen the light of day. Thanks again. |
+
+
+
+
+
+
+
+
+### Wymagania
+1. **Instalacja ESP-IDF**:
+   Aby skonfigurować projekt, należy zainstalować Espressif IoT Development Framework (ESP-IDF), który jest wymagany do zbudowania i wgrania oprogramowania na ESP32-S2. Jeśli nie masz ESP-IDF, wykonaj poniższe kroki:
+
+   ```bash
+   git clone https://github.com/espressif/esp-idf.git
+   cd esp-idf
+   ./install.sh
+   ```
+
+   **Uwaga**: Możesz odwiedzić oficjalny [przewodnik instalacji ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/), aby uzyskać szczegółowe kroki dla swojego systemu operacyjnego.
+
+2. **Klonowanie projektu**:
+   Po zainstalowaniu ESP-IDF, sklonuj repozytorium projektu ESPREZ:
+
+   ```bash
+   git clone https://github.com/retromaniak/ESPREZ.git
+   cd ESPREZ
+   ```
+
+3. **Konfiguracja środowiska ESP-IDF**:
+   Przed przystąpieniem do budowy, skonfiguruj środowisko ESP-IDF, uruchamiając poniższą komendę:
+
+   ```bash
+   source /path/to/esp-idf/export.sh
+   ```
+
+---
+
+### Instrukcje Budowy i Flashowania
+
+#### 1. Ustawienie docelowego urządzenia (target)
+   Projekt oparty jest na mikrokontrolerze ESP32-S2, dlatego należy ustawić odpowiedni target urządzenia:
+
+   ```bash
+   idf.py set-target esp32s2
+   ```
+
+#### 2. Budowanie projektu
+   Po ustawieniu docelowego mikrokontrolera, przejdź do procesu budowy:
+
+   ```bash
+   idf.py build
+   ```
+
+   Komenda ta skompiluje kod źródłowy i utworzy plik binarny, który można wgrać na ESP32-S2.
+
+#### 3. Flashowanie firmware
+   Po zakończonym budowaniu, podłącz ESP32-S2 przez USB i upewnij się, że system wykrywa urządzenie. Następnie wgraj skompilowane firmware na ESP32-S2:
+
+   ```bash
+   idf.py -p /dev/ttyUSB0 flash
+   ```
+
+   **Uwaga**: Zastąp `/dev/ttyUSB0` odpowiednim portem szeregowym wykrytym przez Twój system (np. `COM3` w Windows lub `/dev/ttyS1` w Linux).
+
+#### 4. Monitorowanie (opcjonalnie)
+   Możesz monitorować wyjście z mikrokontrolera, korzystając z komendy `idf.py monitor`:
+
+   ```bash
+   idf.py monitor
+   ```
+
+   Aby zakończyć monitorowanie, naciśnij `Ctrl + ]`.
+
+---
+
+### Wymagania sprzętowe
+1. **Mikrokontroler ESP32-S2
+2. **Sterownik PWM do silników**: Można użyć takich sterowników jak MX1508, DRV8833 lub L9110s.
+3. **Silniczek wibracyjny**: Dowolny mały silnik wibracyjny, który bezpiecznie działa przy napięciu 5V.
+
+---
+
+Dodatkowe informacje oraz pełna dokumentacja projektu dostępna jest w repozytorium: [GitHub ESPREZ](https://github.com/retromaniak/ESPREZ.git).
+
+---
+
