@@ -1,1 +1,0 @@
-could not open port '\\\\.\\COM3': FileNotFoundError(2, 'Nie można odnaleźć określonego pliku.', None, 2)
