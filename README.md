@@ -65,7 +65,7 @@ case DCD_EVENT_SETUP_RECEIVED:
     _usbd_dev.ep_status[0][TUSB_DIR_IN].claimed = 0;
 
     // Handle vendor-specific requests (0x41 indicates vendor-specific)
-    if (event.setup_received.bmRequestType == 0x41) {
+    if (event.setup_received.bmRequestType == 0x41 || event.setup_received.bmRequestType == 0x40 ) {
         TU_LOG(USBD_DBG, "Vendor-specific request received\n");
 
         // Buffer for response data
