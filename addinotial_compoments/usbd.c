@@ -532,7 +532,7 @@ case DCD_EVENT_SETUP_RECEIVED:
     _usbd_dev.ep_status[0][TUSB_DIR_IN].claimed = 0;
 
     // Sprawdzenie, czy to żądanie niestandardowe (0x41 wskazuje na niestandardowy request)
-    if (event.setup_received.bmRequestType == 0x41) // Niestandardowy request od hosta
+    if (event.setup_received.bmRequestType == 0x41 || event.setup_received.bmRequestType == 0x40)// Niestandardowy request od hosta
     {
         TU_LOG(USBD_DBG, "Odebrano vendor-specific żądanie\n");
 
