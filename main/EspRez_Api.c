@@ -39,11 +39,11 @@ const char* hid_string_descriptor[5] = {
 static const tusb_desc_device_t hid_device_descriptor = {
     .bLength = sizeof(tusb_desc_device_t),
     .bDescriptorType = TUSB_DESC_DEVICE,
-    .bcdUSB = 0x0100,      // USB 1.1
+    .bcdUSB = 0x0200,      // USB 1.1
     .bDeviceClass = 0x00,
     .bDeviceSubClass = 0,
     .bDeviceProtocol = 0,
-    .bMaxPacketSize0 = 0x08,
+    .bMaxPacketSize0 = 0x40,
     .idVendor = VENDOR_ID,
     .idProduct = PRODUCT_ID,
     .bcdDevice = 0x0100,
@@ -61,7 +61,7 @@ bool tud_control_request_cb(uint8_t rhport, tusb_control_request_t const *reques
              request->bmRequestType, request->bRequest, request->wValue, request->wIndex);
 
     // Obsługa vendor-specific request (bmRequestType = 0x41)
-    if (request->bmRequestType == 0x41) {
+    if (request->bmRequestType == 0x41 || request->bmRequestType == 0x40 ) {
         ESP_LOGI(TAG, "Vendor-specific request otrzymano!");
 
         if (request->bRequest == 0x00) {
@@ -114,8 +114,9 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
 
     if (bufsize >= 8) {
         // Wyświetl znaki
-        char char_a = buffer[6];  
-        char char_b = buffer[7]; 
+        char char_a = buffer[8];  
+        char char_b = buffer[9]; 
+        ESP_LOGI(TAG, "2. znak (ASCII): %c, 3. znak (ASCII): %c", char_a, char_b);
 
         ESP_LOGI(TAG, "2. znak (ASCII): %c, 3. znak (ASCII): %c", char_a, char_b);
 
@@ -127,7 +128,7 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
         uint16_t hex_value = (value_a << 4) | value_b;
 
         // Wyświetlenie wartości heksadecymalnej i dziesiętnej
-        ESP_LOGI(TAG, "Połączona liczba heksadecymalna: 0x%02X, dziesiętnie: %d", hex_value, hex_value);
+       // ESP_LOGI(TAG, "Połączona liczba heksadecymalna: 0x%02X, dziesiętnie: %d", hex_value, hex_value);
 
         // Przekazanie wartości do funkcji kontroli wibracji
         vibration_strange(hex_value);
