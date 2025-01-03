@@ -5,9 +5,16 @@
 #include "tinyusb.h"
 #include "class/hid/hid_device.h"
 #include "driver/gpio.h"
-#include <ctype.h>  
+#include "driver/ledc.h"
+#include <ctype.h>
 
 #define APP_BUTTON (GPIO_NUM_0)
+#define PWM_PIN GPIO_NUM_7
+#define PWM_FREQ_HZ 1000
+#define PWM_RESOLUTION LEDC_TIMER_8_BIT
+#define PWM_CHANNEL LEDC_CHANNEL_0
+#define PWM_TIMER LEDC_TIMER_0
+
 static const char *TAG = "example";
 
 /************* TinyUSB descriptors ****************/
@@ -19,14 +26,13 @@ static const char *TAG = "example";
 #endif
 
 #define CFG_TUSB_DEBUG 3  // Poziom debugowania, gdzie 3 to najbardziej szczegółow
-// Deskryptor HID
+
 const uint8_t hid_report_descriptor[] = {
     TUD_HID_REPORT_DESC_GENERIC_INOUT(8)
 };
 
-
 void vibration_strange(uint8_t strength);
-// Deskryptor stringów
+
 const char* hid_string_descriptor[5] = {
     (char[]){0x09, 0x04},  // Język angielski
     "ASCII CORPORATION",    // Producent
@@ -35,7 +41,6 @@ const char* hid_string_descriptor[5] = {
     "ASCII Vib",            // Nazwa interfejsu
 };
 
-// Deskryptor urządzenia
 static const tusb_desc_device_t hid_device_descriptor = {
     .bLength = sizeof(tusb_desc_device_t),
     .bDescriptorType = TUSB_DESC_DEVICE,
@@ -53,14 +58,10 @@ static const tusb_desc_device_t hid_device_descriptor = {
     .bNumConfigurations = 1
 };
 
-
-// Funkcja obsługująca wszystkie żądania SETUP na EP0
-// Funkcja obsługująca wszystkie żądania SETUP na EP0
 bool tud_control_request_cb(uint8_t rhport, tusb_control_request_t const *request) {
     ESP_LOGI(TAG, "Obsługa Setup request: bmRequestType=0x%02X, bRequest=0x%02X, wValue=0x%04X, wIndex=0x%04X",
              request->bmRequestType, request->bRequest, request->wValue, request->wIndex);
 
-    // Obsługa vendor-specific request (bmRequestType = 0x41)
     if (request->bmRequestType == 0x41 || request->bmRequestType == 0x40 ) {
         ESP_LOGI(TAG, "Vendor-specific request otrzymano!");
 
@@ -71,81 +72,53 @@ bool tud_control_request_cb(uint8_t rhport, tusb_control_request_t const *reques
         }
     }
 
-    // Jeśli nie obsługujemy tego requesta, zwróć false
     return false;
 }
 
-
-
-
-// Funkcja do obsługi GET_REPORT
 uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t* buffer, uint16_t reqlen) {
     ESP_LOGI(TAG, "GET_REPORT request: instance=%d, report_id=%d, report_type=%d", instance, report_id, report_type);
-    
-    // Wypełniamy bufor zerami, aby zwrócić pusty raport
     memset(buffer, 0, reqlen);
-    
-    // Zwracamy ilość danych do hosta
     return reqlen;
 }
 
-// Deskryptor konfiguracji
 static const uint8_t hid_configuration_descriptor[] = {
     TUD_CONFIG_DESCRIPTOR(1, 1, 0, TUSB_DESC_TOTAL_LEN, 0x80, 98),
-    TUD_HID_DESCRIPTOR(0, 4, false, sizeof(hid_report_descriptor), 0x81, 8, 10),  // IN (0x81)
-    TUD_HID_DESCRIPTOR(1, 4, false, sizeof(hid_report_descriptor), 0x00, 8, 10)   // OUT (0x02)
+    TUD_HID_DESCRIPTOR(0, 4, false, sizeof(hid_report_descriptor), 0x81, 8, 10),
+    TUD_HID_DESCRIPTOR(1, 4, false, sizeof(hid_report_descriptor), 0x00, 8, 10)
 };
 
-/********* TinyUSB HID callbacks ***************/
-
-// Deskryptor raportu HID
 uint8_t const *tud_hid_descriptor_report_cb(uint8_t instance) {
     return hid_report_descriptor;
 }
 
-// Odbieranie danych od hosta (OUT endpoint)
-
-
 void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const* buffer, uint16_t bufsize) {
     ESP_LOGI(TAG, "Odebrano dane od hosta! Rozmiar bufora: %d", bufsize);
 
-    // Wyświetlanie danych jako ciąg znaków (ASCII)
     ESP_LOGI(TAG, "Dane (ASCII): %.*s", bufsize, buffer);
 
     if (bufsize >= 8) {
-        // Wyświetl znaki
         char char_a = buffer[8];  
         char char_b = buffer[9]; 
         ESP_LOGI(TAG, "2. znak (ASCII): %c, 3. znak (ASCII): %c", char_a, char_b);
 
-        ESP_LOGI(TAG, "2. znak (ASCII): %c, 3. znak (ASCII): %c", char_a, char_b);
-
-        // Konwersja znaków ASCII '8' i 'E' na wartości liczbowe
         uint8_t value_a = isdigit(char_a) ? char_a - '0' : toupper(char_a) - 'A' + 10;
         uint8_t value_b = isdigit(char_b) ? char_b - '0' : toupper(char_b) - 'A' + 10;
 
-        // Połączenie wartości w liczbę heksadecymalną
         uint16_t hex_value = (value_a << 4) | value_b;
 
-        // Wyświetlenie wartości heksadecymalnej i dziesiętnej
-       // ESP_LOGI(TAG, "Połączona liczba heksadecymalna: 0x%02X, dziesiętnie: %d", hex_value, hex_value);
-
-        // Przekazanie wartości do funkcji kontroli wibracji
         vibration_strange(hex_value);
     }
 }
 
-
-// Deklaracja funkcji do kontrolowania siły wibracji
 void vibration_strange(uint8_t strength) {
-    // Wykorzystaj wartość strength (0-255) do kontrolowania siły wibracji
-    // np. poprzez PWM, sterownik silnika, itp.
-	strength= strength/2.55;
+    strength = strength / 2.55;  // Convert to percentage
     ESP_LOGI("VIBRATION", "Ustawiono siłę wibracji na: %d%%", strength);
+
+    uint32_t duty_cycle = (strength * 255) / 100;  // Scale to 8-bit PWM resolution
+
+    ESP_ERROR_CHECK(ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_CHANNEL, duty_cycle));
+    ESP_ERROR_CHECK(ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_CHANNEL));
 }
-
-
-/********* Application ***************/
 
 void app_main(void) {
     ESP_LOGI(TAG, "Inicjalizacja USB HID");
@@ -159,13 +132,31 @@ void app_main(void) {
     };
 
     ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
-    //dcd_event_setup_received(0, NULL, true);
-
     ESP_LOGI(TAG, "USB HID zainicjalizowane");
+
+    ledc_timer_config_t ledc_timer = {
+        .speed_mode = LEDC_LOW_SPEED_MODE,
+        .timer_num = PWM_TIMER,
+        .duty_resolution = PWM_RESOLUTION,
+        .freq_hz = PWM_FREQ_HZ,
+        .clk_cfg = LEDC_AUTO_CLK
+    };
+    ESP_ERROR_CHECK(ledc_timer_config(&ledc_timer));
+
+    ledc_channel_config_t ledc_channel = {
+        .gpio_num = PWM_PIN,
+        .speed_mode = LEDC_LOW_SPEED_MODE,
+        .channel = PWM_CHANNEL,
+        .intr_type = LEDC_INTR_DISABLE,
+        .timer_sel = PWM_TIMER,
+        .duty = 0,
+        .hpoint = 0
+    };
+    ESP_ERROR_CHECK(ledc_channel_config(&ledc_channel));
 
     while (1) {
         if (tud_mounted()) {
-            //ESP_LOGI(TAG, "Urządzenie HID podłączone i działa, oczekiwanie na dane...");
+            // ESP_LOGI(TAG, "Urządzenie HID podłączone i działa, oczekiwanie na dane...");
         }
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
