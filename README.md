@@ -2,7 +2,7 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Rekreacja REZ Trance Vibrator oparta o ESP32 Serii S<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - REZ Trance Vibrator Recreation based on ESP32 S-Series
 
-[![ESPREZ - REZ accessory recration based on ESP32 series S](https://img.youtube.com/vi/rmJZSiyocIU/0.jpg)](https://www.youtube.com/watch?v=rmJZSiyocIU)<br>
+[![ESPREZ - REZ accessory recration based on ESP32 series S](thumbnail2.png)](https://www.youtube.com/watch?v=rmJZSiyocIU)<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - ESPREZ w akcji (do celów prezentacyjnych, silnik zastąpiony diodą LED)<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - ESPREZ in action (for presentation purposes, motor replaced by LED)
 
