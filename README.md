@@ -1,3 +1,4 @@
+# Readme under construction
 ![ESPREZ LOGO](./ESPREZ.png)
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Rekreacja REZ Trance Vibrator oparta o ESP32 Serii S<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - REZ Trance Vibrator Recreation based on ESP32 S-Series
@@ -8,7 +9,46 @@
 
 | <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="50"/> | <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="50"> |
 |---|---|
-| <h1> Mamy to - projekt został zrealizowany, readme w budowie </h1> | <h1> We got it - the project is done, readme under construction </h1> |
+| <h3>Instalacja programu na mikrokontrolerze</h3> Aby tym co chcą bez zbędnych przedłużeń móc mieć w swoim posiadaniu gotowe urządzenie, przestawiam instrukcję instalacji programu na ESP32-S3, dlaczego S3, a nie zdecydowanie tańsze S2? ponieważ ani mi ani programiście nie udało się go sflashować. Oto więc co po kolei należy zrobić:| <h3>Installation of the program on the microcontroller</h3> In order for those who want to be able to have a finished device in their possession without unnecessary extensions, I am rearranging the instructions for installing the program on the ESP32-S3, why the S3 and not the definitely cheaper S2? because neither I nor the programmer managed to sflash it. So here is what to do one by one: |
+| 1. **Instalacja ESP-IDF (jeżeli posiadasz, możesz pominąć)**:<br>- Sklonuj repozytorium ESP-IDF i postępuj zgodnie z instrukcjami instalacji zawartymi w [oficjalnej dokumentacji ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).<br><img width="540" height="1"> | 1. **install ESP-IDF (if you have one, you can skip it)**:<br>- Clone the ESP-IDF repository and follow the installation instructions provided in the [official ESP-IDF documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).<br><img width="540" height="1"> |
+```bash
+    git clone https://github.com/espressif/esp-idf.git
+    cd esp-idf
+    ./install.sh
+    . ./export.sh
+```
+
+|  |  |
+|---|---|
+| 2. **Sklonuj repozytorium projektu**:<br>- Sklonuj to repozytorium na twoją lokalną maszynę:<br><img width="540" height="1"> | 2. **Clone the Project Repository**:<br>- Clone this repository to your local machine:<br><img width="540" height="1"> |
+  ```bash
+    git clone https://github.com/retromaniak/ESPREZ
+    cd ESPREZ
+  ```
+|  |  |
+|---|---|
+| 3. **Skonfiguruj urządzenie docelowe**:<br>- Ustaw urządzenie docelowe jako ESP32-S3:<br><img width="540" height="1"> | 3. **Configure the Target Device**:<br>- Set the target device to ESP32-S3:<br><img width="540" height="1"> |
+```bash
+    idf.py set-target esp32s3
+```
+|  |  |
+|---|---|
+| 4. **Zbuduj Projekt**:<br>- Uruchom poniższą komendę aby zbudować projekt<br><img width="540" height="1"> | 4. **Build the Project**:<br>- Run the following command to build the project:<br><img width="540" height="1"> |
+```bash
+    idf.py build
+```
+|  |  |
+|---|---|
+| 5. **Flashowanie Oprogramowania układowego**:<br>- Po zbudowaniu podłącz ESP32-S3 do komputera i sflashuj oprogramowanie układowe:<br><img width="540" height="1"> | 5. **Flash the Firmware**:<br>- After building, connect the ESP32-S3 to your machine and flash the firmware:<br><img width="540" height="1"> |
+```bash
+    idf.py flash
+```
+| Opcjonalnie | Optional |
+|---|---|
+| 6. **Monitor Wyjścia**:<br>- Aby monitorować wyjście urządzenia, należy użyć:<br><img width="540" height="1"> | 6. **Monitor the Output**:<br>- To monitor the device output, use:<br><img width="540" height="1"> |
+```bash
+    idf.py monitor
+```
 
 ### ESP32-S3 HID Device Project with Custom Setup Request Handling
 
@@ -104,55 +144,6 @@ case DCD_EVENT_SETUP_RECEIVED:
 ```
 
 This modification processes vendor-specific setup requests by logging their details, sending a debug response back to the host, and invoking a callback for further processing. Unsupported requests are rejected by stalling the control endpoint.
-
----
-
-### How to Build and Flash
-
-1. **Install ESP-IDF**:
-    - Clone the ESP-IDF repository and follow the installation instructions provided in the [official ESP-IDF documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).
-
-    ```bash
-    git clone https://github.com/espressif/esp-idf.git
-    cd esp-idf
-    ./install.sh
-    ```
-
-2. **Clone the Project Repository**:
-    - Clone this repository to your local machine:
-
-    ```bash
-    git clone https://github.com/retromaniak/ESPREZ
-    cd ESPREZ
-    ```
-
-3. **Configure the Target Device**:
-    - Set the target device to ESP32-S3:
-
-    ```bash
-    idf.py set-target esp32s3
-    ```
-
-4. **Build the Project**:
-    - Run the following command to build the project:
-
-    ```bash
-    idf.py build
-    ```
-
-5. **Flash the Firmware**:
-    - After building, connect the ESP32-S3 to your machine and flash the firmware:
-
-    ```bash
-    idf.py flash
-    ```
-
-6. **Monitor the Output** (optional):
-    - To monitor the device output, use:
-
-    ```bash
-    idf.py monitor
-    ```
 
 ---
 
