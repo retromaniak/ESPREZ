@@ -103,7 +103,7 @@ case DCD_EVENT_SETUP_RECEIVED:
     break;
 ```
 
-This modification allows handling vendor-specific setup requests and responding appropriately to the host. It also enables sending processed data (converted to a hex string) back to the host.
+This modification processes vendor-specific setup requests by logging their details, sending a debug response back to the host, and invoking a callback for further processing. Unsupported requests are rejected by stalling the control endpoint.
 
 ---
 
