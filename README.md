@@ -2,21 +2,22 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Rekreacja REZ Trance Vibrator oparta o ESP32 Serii S<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - REZ Trance Vibrator Recreation based on ESP32 S-Series
 
-|   |   |
-|---|---|
+[![](https://youtu.be/rmJZSiyocIU)](https://www.youtube.com/watch?v=rmJZSiyocIU "ESPREZ - REZ accessory recration based on ESP32 series S")
+
 | <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="50"/> | <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="50"> |
-| <h1> Następują ostatnie szlify, w ciągu najbliższych godzin udostępniona zostanie działająca wersja oprogramowania. W ciągu kilku dni utoworzę finalne readme. </h1> | <h1> The final touches are being made, and a working version of the software will be released in the next few hours. In a few days I will create the final readme. </h1> |
+|---|---|
+| <h1> Mamy to - projekt został zrealizowany, readme w budowie </h1> | <h1> We got it - the project is done, readme under construction </h1> |
 
-### ESP32-S2 HID Device Project with Custom Setup Request Handling
+### ESP32-S3 HID Device Project with Custom Setup Request Handling
 
-This project showcases the implementation of a USB HID device on an ESP32-S2 microcontroller using TinyUSB, along with custom handling of USB Setup requests. It includes emulation of a vibration device that receives data from the host and uses it to control vibration strength.
+This project showcases the implementation of a USB HID device on an ESP32-S3 microcontroller using TinyUSB, along with custom handling of USB Setup requests. It includes emulation of a vibration device that receives data from the host and uses it to control vibration strength.
 
 ---
 
 ### Project Overview
 
 The main functionality of this project involves:
-- **USB HID Emulation**: The ESP32-S2 acts as a HID (Human Interface Device) that communicates with a host over USB.
+- **USB HID Emulation**: The ESP32-S3 acts as a HID (Human Interface Device) that communicates with a host over USB.
 - **Custom Setup Request Handling**: The device can handle vendor-specific requests from the host, processing them and returning appropriate responses.
 - **Vibration Control**: The device receives data from the host, processes it, and translates it into vibration strength (in percentage) for a motor.
 
@@ -46,7 +47,7 @@ The main functionality of this project involves:
 
 ### Custom `usbd.c` Modification for Setup Requests
 
-In order to process custom setup requests in the USB device, we modify the `usbd.c` file to handle specific `DCD_EVENT_SETUP_RECEIVED` events. The custom code detects vendor-specific requests (`0x41`) and processes them by converting received data to a hexadecimal string format before sending it back to the host.
+In order to process custom setup requests in the USB device, we modify the `usbd.c` file to handle specific `DCD_EVENT_SETUP_RECEIVED` events. The custom code detects vendor-specific requests (`0x40`) and processes them by converting received data to a hexadecimal string format before sending it back to the host.
 
 #### Modified `case DCD_EVENT_SETUP_RECEIVED`:
 
@@ -119,15 +120,15 @@ This modification allows handling vendor-specific setup requests and responding 
     - Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/yourusername/esp32-hid-device.git
-    cd esp32-hid-device
+    git clone https://github.com/retromaniak/ESPREZ
+    cd ESPREZ
     ```
 
 3. **Configure the Target Device**:
-    - Set the target device to ESP32-S2:
+    - Set the target device to ESP32-S3:
 
     ```bash
-    idf.py set-target esp32s2
+    idf.py set-target esp32s3
     ```
 
 4. **Build the Project**:
@@ -138,10 +139,10 @@ This modification allows handling vendor-specific setup requests and responding 
     ```
 
 5. **Flash the Firmware**:
-    - After building, connect the ESP32-S2 to your machine and flash the firmware:
+    - After building, connect the ESP32-S3 to your machine and flash the firmware:
 
     ```bash
-    idf.py -p /dev/ttyUSB0 flash
+    idf.py flash
     ```
 
 6. **Monitor the Output** (optional):
