@@ -7,10 +7,11 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - ESPREZ w akcji (do celów prezentacyjnych, silnik zastąpiony diodą LED)<br>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - ESPREZ in action (for presentation purposes, motor replaced by LED)
 
+---
 | <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="50"/> | <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="50"> |
 |---|---|
 | <h3>Instalacja programu na mikrokontrolerze</h3> Aby tym co chcą bez zbędnych przedłużeń móc mieć w swoim posiadaniu gotowe urządzenie, przestawiam instrukcję instalacji programu na ESP32-S3, dlaczego S3, a nie zdecydowanie tańsze S2? ponieważ ani mi ani programiście nie udało się go sflashować. Oto więc co po kolei należy zrobić:| <h3>Installation of the program on the microcontroller</h3> In order for those who want to be able to have a finished device in their possession without unnecessary extensions, I am rearranging the instructions for installing the program on the ESP32-S3, why the S3 and not the definitely cheaper S2? because neither I nor the programmer managed to sflash it. So here is what to do one by one: |
-| 1. **Instalacja ESP-IDF (jeżeli posiadasz, możesz pominąć)**:<br>- Sklonuj repozytorium ESP-IDF i postępuj zgodnie z instrukcjami instalacji zawartymi w [oficjalnej dokumentacji ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).<br><img width="540" height="1"> | 1. **install ESP-IDF (if you have one, you can skip it)**:<br>- Clone the ESP-IDF repository and follow the installation instructions provided in the [official ESP-IDF documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).<br><img width="540" height="1"> |
+| 1. **Instalacja ESP-IDF (jeżeli posiadasz, możesz pominąć)**:<br>- Sklonuj repozytorium ESP-IDF i postępuj zgodnie z instrukcjami instalacji zawartymi w [oficjalnej dokumentacji ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).<br><img width="960" height="1"> | 1. **install ESP-IDF (if you have one, you can skip it)**:<br>- Clone the ESP-IDF repository and follow the installation instructions provided in the [official ESP-IDF documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).<br><img width="960" height="1"> |
 ```bash
     git clone https://github.com/espressif/esp-idf.git
     cd esp-idf
@@ -20,35 +21,41 @@
 
 |  |  |
 |---|---|
-| 2. **Sklonuj repozytorium projektu**:<br>- Sklonuj to repozytorium na twoją lokalną maszynę:<br><img width="540" height="1"> | 2. **Clone the Project Repository**:<br>- Clone this repository to your local machine:<br><img width="540" height="1"> |
+| 2. **Sklonuj repozytorium projektu**:<br>- Sklonuj to repozytorium na twoją lokalną maszynę:<br><img width="960" height="1"> | 2. **Clone the Project Repository**:<br>- Clone this repository to your local machine:<br><img width="960" height="1"> |
   ```bash
     git clone https://github.com/retromaniak/ESPREZ
     cd ESPREZ
   ```
 |  |  |
 |---|---|
-| 3. **Skonfiguruj urządzenie docelowe**:<br>- Ustaw urządzenie docelowe jako ESP32-S3:<br><img width="540" height="1"> | 3. **Configure the Target Device**:<br>- Set the target device to ESP32-S3:<br><img width="540" height="1"> |
+| 3. **Skonfiguruj urządzenie docelowe**:<br>- Ustaw urządzenie docelowe jako ESP32-S3:<br><img width="960" height="1">| 3. **Configure the Target Device**:<br>- Set the target device to ESP32-S3:<br><img width="960" height="1"> |
 ```bash
     idf.py set-target esp32s3
 ```
 |  |  |
 |---|---|
-| 4. **Zbuduj Projekt**:<br>- Uruchom poniższą komendę aby zbudować projekt<br><img width="540" height="1"> | 4. **Build the Project**:<br>- Run the following command to build the project:<br><img width="540" height="1"> |
+| 4. **Zbuduj Projekt**:<br>- Uruchom poniższą komendę aby zbudować projekt<br><img width="960" height="1"> | 4. **Build the Project**:<br>- Run the following command to build the project:<br><img width="960" height="1"> |
 ```bash
     idf.py build
 ```
 |  |  |
 |---|---|
-| 5. **Flashowanie Oprogramowania układowego**:<br>- Po zbudowaniu podłącz ESP32-S3 do komputera i sflashuj oprogramowanie układowe:<br><img width="540" height="1"> | 5. **Flash the Firmware**:<br>- After building, connect the ESP32-S3 to your machine and flash the firmware:<br><img width="540" height="1"> |
+| 5. **Flashowanie Oprogramowania układowego**:<br>- Po zbudowaniu podłącz ESP32-S3 do komputera i sflashuj oprogramowanie układowe:<br><img width="960" height="1"> | 5. **Flash the Firmware**:<br>- After building, connect the ESP32-S3 to your machine and flash the firmware:<br><img width="960" height="1"> |
 ```bash
     idf.py flash
 ```
 | Opcjonalnie | Optional |
 |---|---|
-| 6. **Monitor Wyjścia**:<br>- Aby monitorować wyjście urządzenia, należy użyć:<br><img width="540" height="1"> | 6. **Monitor the Output**:<br>- To monitor the device output, use:<br><img width="540" height="1"> |
+| 6. **Monitor Wyjścia**:<br>- Aby monitorować wyjście urządzenia, należy użyć:<br><img width="960" height="1"> | 6. **Monitor the Output**:<br>- To monitor the device output, use:<br><img width="960" height="1"> |
 ```bash
     idf.py monitor
 ```
+
+---
+| <h3>Lista mikrokontrolerów kompatybilnych z projektem</h3> | <h3>List of microcontrollers compatible with the project</h3> |
+|---|---|
+| Projekt bazuje na bibliotece TinyUSB która odpowiada za zmianę PID oraz VID jak też obsługę nietypowych zapytań od konsoli. Nie każdy mikrokontroler nadaje się do tego celu. [wczytując się w dokumentację tinyUSB](https://docs.tinyusb.org/en/stable/reference/supported.html) odnaleźć możecie listę kompatybilności mikrokontrolerów z tą biblioteką. Jeżeli w kolumnie Device znajduje się ✔ oznacza to iż wykorzystanie tego mikrokontrolera w projekcie ESPREZ jest możliwe. Jeżeli wasz mikrokontroler nie widnieje na liście, bądź jest oznaczony we wcześniej wspomnianej kolumnie ✖ oznacza to że w projekcie wykorzystany być nie może.<br><img width="960" height="1">| The project is based on the TinyUSB library, which is responsible for changing the PID and VID as well as handling unusual requests from the console. Not every microcontroller is suitable for this purpose. [In the tinyUSB documentation](https://docs.tinyusb.org/en/stable/reference/supported.html) you can find a list of microcontrollers compatible with this library. If in the Device column you can find ✔, it means that the use of this microcontroller in the ESPREZ project is possible. If your microcontroller does not appear in the list, or is marked in the ✖ column mentioned above, it means that it cannot be used in the project.<br><img width="960" height="1"> |
+
 
 ### ESP32-S3 HID Device Project with Custom Setup Request Handling
 
