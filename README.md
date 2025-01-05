@@ -8,7 +8,8 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - ESPREZ in action (for presentation purposes, motor replaced by LED)
 
 ---
-| <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="50"/> | <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="50"> |
+
+| <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="50"/><br><h1>Podstawy implementacji projektu</h1> | <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="50"><br><h1>Basics of project implementation</h1> |
 |---|---|
 | <h3>Instalacja programu na mikrokontrolerze</h3> Aby tym co chcą bez zbędnych przedłużeń móc mieć w swoim posiadaniu gotowe urządzenie, przestawiam instrukcję instalacji programu na ESP32-S3, dlaczego S3, a nie zdecydowanie tańsze S2? ponieważ ani mi ani programiście nie udało się go sflashować. Oto więc co po kolei należy zrobić:| <h3>Installation of the program on the microcontroller</h3> In order for those who want to be able to have a finished device in their possession without unnecessary extensions, I am rearranging the instructions for installing the program on the ESP32-S3, why the S3 and not the definitely cheaper S2? because neither I nor the programmer managed to sflash it. So here is what to do one by one: |
 | 1. **Instalacja ESP-IDF (jeżeli posiadasz, możesz pominąć)**:<br>- Sklonuj repozytorium ESP-IDF i postępuj zgodnie z instrukcjami instalacji zawartymi w [oficjalnej dokumentacji ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).<br><img width="960" height="1"> | 1. **install ESP-IDF (if you have one, you can skip it)**:<br>- Clone the ESP-IDF repository and follow the installation instructions provided in the [official ESP-IDF documentation](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/).<br><img width="960" height="1"> |
@@ -51,11 +52,37 @@
     idf.py monitor
 ```
 
----
 | <h3>Lista mikrokontrolerów kompatybilnych z projektem</h3> | <h3>List of microcontrollers compatible with the project</h3> |
 |---|---|
-| Projekt bazuje na bibliotece TinyUSB która odpowiada za zmianę PID oraz VID jak też obsługę nietypowych zapytań od konsoli. Nie każdy mikrokontroler nadaje się do tego celu. [wczytując się w dokumentację tinyUSB](https://docs.tinyusb.org/en/stable/reference/supported.html) odnaleźć możecie listę kompatybilności mikrokontrolerów z tą biblioteką. Jeżeli w kolumnie Device znajduje się ✔ oznacza to iż wykorzystanie tego mikrokontrolera w projekcie ESPREZ jest możliwe. Jeżeli wasz mikrokontroler nie widnieje na liście, bądź jest oznaczony we wcześniej wspomnianej kolumnie ✖ oznacza to że w projekcie wykorzystany być nie może.<br><img width="960" height="1">| The project is based on the TinyUSB library, which is responsible for changing the PID and VID as well as handling unusual requests from the console. Not every microcontroller is suitable for this purpose. [In the tinyUSB documentation](https://docs.tinyusb.org/en/stable/reference/supported.html) you can find a list of microcontrollers compatible with this library. If in the Device column you can find ✔, it means that the use of this microcontroller in the ESPREZ project is possible. If your microcontroller does not appear in the list, or is marked in the ✖ column mentioned above, it means that it cannot be used in the project.<br><img width="960" height="1"> |
+| Projekt bazuje na bibliotece TinyUSB która odpowiada za zmianę PID oraz VID jak też obsługę nietypowych zapytań od konsoli. Nie każdy mikrokontroler nadaje się do tego celu. Wczytując się w dokumentację tinyUSB odnaleźć możecie [listę kompatybilności mikrokontrolerów](https://docs.tinyusb.org/en/stable/reference/supported.html) z tą biblioteką. Jeżeli w kolumnie Device znajduje się ✔ oznacza to iż wykorzystanie tego mikrokontrolera w projekcie ESPREZ jest możliwe. Jeżeli wasz mikrokontroler nie widnieje na liście, bądź jest oznaczony we wcześniej wspomnianej kolumnie ✖ oznacza to że w projekcie wykorzystany być nie może.<br><img width="960" height="1">| The project is based on the TinyUSB library, which is responsible for changing the PID and VID as well as handling unusual requests from the console. Not every microcontroller is suitable for this purpose. In the tinyUSB documentation you can find a [list of microcontrollers compatible](https://docs.tinyusb.org/en/stable/reference/supported.html) with this library. If in the Device column you can find ✔, it means that the use of this microcontroller in the ESPREZ project is possible. If your microcontroller does not appear in the list, or is marked in the ✖ column mentioned above, it means that it cannot be used in the project.<br><img width="960" height="1"> |
 
+<table>
+  <tr>
+    <th><h3>Budowa Hardware'u</h3></th>
+    <th><h3>Hardware Construction</h3></th>
+  </tr>
+  <tr>
+    <td>Najprostsze połączenie pozwalające ocenić sprawność projektu wymaga mikrokontrolera posiadającego wyprowadzenie GPIO7 (w tym przypadku ESP32-S3 Zero) oraz diody LED które połączyć należy zgodnie ze schematem zaprezentowanym na obrazku poniżej:</td>
+    <td>The simplest connection to evaluate the efficiency of the project requires a microcontroller that has a GPIO7 pin (in this case ESP32-S3 Zero) and LEDs, which should be connected according to the schematic presented in the image below:</td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="bascon.png" alt=""/><br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Schemat minimalnego połączenia<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - Basic connection diagram</td>
+  </tr>
+    <tr>
+    <td>Do uzyskania pełni doświadczenia związanego z używaniem akcesorium wymagany jest jednak silnik wibracyjny. Tu też pojawia się problem. Mianowicie po pierwsze ESP wysyła na swoje wyjścia sygnał o zbyt niskim natężeniu prądu by móc uruchomić silnik wibracyjny. Po drugie sygnał który otrzymujemy na GPIO7 nie jest sygnałem analogowym, a sygnałem o zmiennym wypełnieniu impulsu (PWM). Nie wdając się w szczegóły, sygnał taki nie nadaje się do zasilania silników nawet po jego wzmocnieniu. Oczywiście można na podstawie tranzystora i kilku elementów towarzyszących zbudować na piechotę układ zamieniający sygnał PWM na analogowy i go wzmacniający do poziomu pozwalającego poprawnie zasilić silnik, jednakże ja nie mam pojęcia na temat tego zagadnienia, a pasjonaci elektroniki na forach internetowych to osoby o tak dużej empatii w stosunku do osób chcących zapoznać się z tym tematem że są ostatnimi ludźmi których chcecie poprosić o radę. Jest jednak na to rozwiązanie, a mianowicie sterownik PWM. Najpopularniejsze układy będą operowały na napięciu 12V i będą duże co uniemożliwi ich użycie w projekcie. Są jednak również układy kompaktowe, możliwe do zasilania napięciem 5V. Osobiście polecam układ DRV8833 który jest tani i działa, a płytki prototypowe z nim na pokładzie mają wyprowadzenia na raster 2,54mm więc są łatwe do użycia w projektach. Efektem ubocznym takich urządzeń jest to iż projektowane są zazwyczaj do modeli RC więc oferują nie jedno a 2 wyjścia dla silników. W efekcie zerowym kosztem otrzymujemy urządzenie obsługujące do 2 silników wibracyjnych.</td>
+    <td>However, a vibration motor is required to get the full experience of using the accessory. This is also where the problem arises. Namely, firstly, the ESP sends a signal with too low a current to its outputs to run the vibration motor. Secondly, the signal you get on GPIO7 is not an analog signal, but a pulse-width variable (PWM) signal. Without going into details, such a signal is not suitable for powering motors even after amplification. Of course, it is possible to build on foot, based on a transistor and a few accompanying elements, a circuit that converts the PWM signal into an analog signal and amplifies it to a level that allows you to properly power the motor, however, I have no idea about this issue, and electronics enthusiasts on Internet forums are people with so much empathy towards people who want to learn about this topic that they are the last people you want to ask for advice. There is a solution to this, however, and that is a PWM controller. The most popular circuits will operate on 12V and will be large, making them impossible to use in a project. However, there are also compact circuits that can be powered by 5V. I personally recommend the DRV8833 chip, which is cheap and works, and prototype boards with it on board have leads on a 2.54mm raster so they are easy to use in projects. A side effect of such devices is that they are usually designed for RC models so they offer not one but 2 outputs for motors. As a result, at zero cost you get a device that supports up to 2 vibration motors.</td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="extcon.png" alt=""/><br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Flag_of_Poland_%28normative%29.svg" height="12"/> - Schemat połączenia rozszerzonego<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" height="12"/> - Extended connection diagram</td>
+  </tr>
+</table>
+
+
+---
 
 ### ESP32-S3 HID Device Project with Custom Setup Request Handling
 
